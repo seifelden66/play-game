@@ -1,14 +1,7 @@
 <template>
-  <section class="agency-section">
-    <div class="agency-container">
-      <!-- Top Title -->
-
-      <div class="agency-inner">
-        <!-- Left: Big "WE" -->
-
-        <!-- Right: 7 Items in Two Columns -->
-        <div class="agency-right">
-          <!-- Left Column Items -->
+    <section class="agency-section">
+      <div class="agency-container">
+        <div class="agency-inner">
           <div class="agency-item we">
             <div class="agency-left">
               <h1 class="big-we">WE</h1>
@@ -32,8 +25,6 @@
               nutritionists and physiotherapists—helps you perform at the highest level.
             </p>
           </div>
-
-          <!-- Right Column Items -->
           <div class="agency-item manage">
             <h3>MANAGE</h3>
             <p>
@@ -60,147 +51,100 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</template>
-
-<script setup></script>
-
-<style scoped>
-.agency-section {
-  padding: 2rem 1rem;
-}
-
-/* Gradient-Bordered Container */
-.agency-container {
-  max-width: 1130px;
-  margin: 0 auto;
-  border: 4px solid transparent;
-  border-radius: 15px;
-
-  padding: 2rem;
-}
-
-/* Top Title */
-.agency-title {
-  font-family: "Anton", sans-serif;
-  font-size: 2rem;
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 0 0 2rem;
-  line-height: 1.2;
-}
-
-/* Inner Layout: Big WE + Grid of Items */
-.agency-inner {
-  display: flex;
-  gap: 2rem;
-}
-
-/* Left: Big WE */
-.agency-left {
-  flex-shrink: 0; /* Keep the "WE" from shrinking when window resizes */
-}
-
-.big-we {
-  font-family: "Anton", sans-serif;
-  font-size: 299px;
-  color: #fff;
-  margin: 0;
-  line-height: 0.9;
-}
-
-/* Right: 2-Column Grid for Items */
-.agency-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns */
-  grid-template-rows: repeat(4, auto); /* Four rows total */
-  gap: 3rem 6rem; /* Row gap, column gap */
-  flex: 1;
-}
-
-/* Each Item */
-.agency-item {
-  color: #fff;
-}
-
-.agency-item h3 {
-  font-family: "Anton", sans-serif;
-  font-size: 60px;
-  margin: 0 0 0.5rem;
-  text-transform: uppercase;
-  /* Subtle line under heading, as in the screenshot */
-  border-bottom: 1px solid #fff;
-  padding-bottom: 0.5rem;
-}
-
-.agency-item p {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  line-height: 1.4;
-  margin: 0;
-}
-
-/* Explicitly place items in the grid to match the screenshot’s left & right columns */
-.we {
-  grid-row: 1;
-  grid-column: 1;
-}
-.build {
-  grid-row: 2;
-  grid-column: 1;
-}
-.cheer {
-  grid-row: 3;
-  grid-column: 1;
-}
-.train {
-  grid-row: 4;
-  grid-column: 1;
-}
-.manage {
-  grid-row: 1;
-  grid-column: 2;
-}
-.market {
-  grid-row: 2;
-  grid-column: 2;
-}
-.tech {
-  grid-row: 3;
-  grid-column: 2;
-}
-.empower {
-  grid-row: 4;
-  grid-column: 2;
-}
-/* Only apply single-column for screens <= 768px */
-@media (max-width: 768px) {
+    </section>
+  </template>
+  
+  <script setup></script>
+  
+  <style scoped>
+  .agency-section {
+    padding: 2rem 1rem;
+  }
+  
+  /* Gradient-Bordered Container */
+  .agency-container {
+    max-width: 1130px;
+    margin: 0 auto;
+    border: 4px solid transparent;
+    border-radius: 15px;
+    padding: 2rem;
+  }
+  
+  /* Inner Layout: Flex container for "WE" and grid of items */
   .agency-inner {
-    flex-direction: column;
-    /* or switch to a single-column grid if desired */
-  }
-
-  .big-we {
-    font-size: 150px; /* smaller on mobile */
-  }
-
-  .agency-right {
-    grid-template-columns: 1fr; /* single column for bullet items */
+    display: flex;
     gap: 2rem;
   }
-}
-
-/* If you want further tweaks for very small screens <= 480px */
-@media (max-width: 480px) {
+  
+  /* Left: Big WE */
+  .agency-left {
+    flex-shrink: 0;
+  }
   .big-we {
-    font-size: 120px;
+    font-size: 299px;
+    color: #fff;
+    margin: 0;
+    line-height: 0.9;
   }
-
+  
+  /* Right: 2-Column Grid for Items */
+  .agency-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 3rem 6rem;
+    flex: 1;
+  }
+  
+  /* Each Item */
+  .agency-item {
+    color: #fff;
+  }
   .agency-item h3 {
-    font-size: 32px;
+    font-size: 60px;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 0.5rem;
   }
-}
-
-</style>
+  .agency-item p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  /* Explicit Grid Placement */
+  .we { grid-row: 1; grid-column: 1; }
+  .build { grid-row: 2; grid-column: 1; }
+  .cheer { grid-row: 3; grid-column: 1; }
+  .train { grid-row: 4; grid-column: 1; }
+  .manage { grid-row: 1; grid-column: 2; }
+  .market { grid-row: 2; grid-column: 2; }
+  .tech { grid-row: 3; grid-column: 2; }
+  .empower { grid-row: 4; grid-column: 2; }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .agency-inner {
+      flex-direction: column;
+    }
+    .big-we {
+      font-size: 150px;
+    }
+    .agency-right {
+      /* Force single column layout */
+      grid-template-columns: 1fr !important;
+      gap: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .big-we {
+      font-size: 120px;
+    }
+    .agency-item h3 {
+      font-size: 32px;
+    }
+  }
+  </style>
+  

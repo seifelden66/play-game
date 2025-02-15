@@ -67,7 +67,6 @@ export default {
   padding: 6rem 2rem 8rem;
   clip-path: polygon(0% 12.5%, 100% -7%, 100% 88.5%, 0% 100.3%);
 
-  font-family: "Poppins", sans-serif;
 }
 
 .contact-content {
@@ -83,7 +82,6 @@ export default {
 }
 
 .contact-left h2 {
-  font-family: "Anton", sans-serif;
   font-size: 46px;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -145,7 +143,6 @@ button[type="submit"] {
   color: #000;
   border: none;
   border-radius: 6px;
-  font-family: "Anton", sans-serif;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
   cursor: pointer;

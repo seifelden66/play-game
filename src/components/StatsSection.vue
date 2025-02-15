@@ -64,7 +64,6 @@
 
 /* Larger, bold number */
 .stats-box h3 {
-  font-family: "Anton", sans-serif;
   font-size: 123px;
   margin: 0;
   line-height: 1.2;
@@ -73,7 +72,6 @@
 
 /* Smaller label */
 .stats-box p {
-  font-family: "Poppins", sans-serif;
   font-size: 44px;
   margin: 0.5rem 0 0;
 }

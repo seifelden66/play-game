@@ -55,7 +55,6 @@
     padding: 3rem 2rem;
     display: flex;
     gap: 9rem;
-    font-family: "Poppins", sans-serif;
   }
   
   .text-from-sercvices {
@@ -67,7 +66,6 @@
     color: white;
     font-size: 37px;
     padding: 2rem 0.5rem;
-    font-family: "Poppins", sans-serif;
     margin-bottom: 1rem;
     text-transform: uppercase;
     font-weight: 400;
@@ -112,14 +110,12 @@
   }
   
   .services-right h2 {
-    font-family: "Anton", sans-serif;
     font-size: 2rem;
     color: #fff;
     margin-bottom: 1rem;
   }
   
   .services-right p {
-    font-family: "Poppins", sans-serif;
     font-size: 1rem;
     color: #ccc;
     line-height: 1.5;

@@ -113,7 +113,6 @@ onUnmounted(() => {
 }
 
 .global-heading {
-  font-family: "Anton", sans-serif;
   font-size: 130px;
   text-align: center;
   margin: 0 0 0.5rem;
@@ -121,7 +120,6 @@ onUnmounted(() => {
 }
 
 .offices-subheading {
-  font-family: "Poppins", sans-serif;
   font-size: 55px;
   text-align: center;
   margin: 0 0 3rem;
@@ -135,7 +133,6 @@ onUnmounted(() => {
 
 .location-text {
   height: 60px;
-  font-family: "Anton", sans-serif;
   font-size: 95px;
   margin: 0;
   line-height: 1.2;
@@ -159,7 +156,6 @@ onUnmounted(() => {
   background: linear-gradient(#070E58, #070E58) padding-box,
   linear-gradient(to left, #5bb507, #1859bb) border-box;
   color: #fff;
-  font-family: "Poppins", sans-serif;
   font-size: 50px;
   font-weight: 700;
   /* text-transform: uppercase; */
@@ -171,7 +167,6 @@ onUnmounted(() => {
 
 
 .bottom-text {
-  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   color: #ccc;
   line-height: 1.5;
