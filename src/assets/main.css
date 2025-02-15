@@ -1,12 +1,21 @@
-html, body{
-  /* overflow-x: hidden ; */
+/* Global Styles (e.g., in your main CSS file or in App.vue without scoped) */
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('/path/to/GlacialIndifference-Regular.woff2') format('woff2'),
+       url('/path/to/GlacialIndifference-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
+html,
+body {
   padding: 0;
   margin: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
+  font-family: 'Glacial Indifference', sans-serif;
 }
-body{
+
+body {
   overflow-x: hidden;
-  background: linear-gradient(180deg, #000000,#00010B, #03062A, #0b1120);
-  
+  background-image: url('/gradient-bg.png');
 }

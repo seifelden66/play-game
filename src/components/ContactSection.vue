@@ -60,9 +60,9 @@ export default {
 
 <style scoped>
 .contact-section {
-  margin-top: 100px;
+  margin-top: 180px;
   border-radius: 0px 30% 0px 0px;
-  background-color: #5bb507;
+  background-color: #8AC13C;
   color: #000;
   padding: 6rem 2rem 8rem;
   clip-path: polygon(0% 12.5%, 100% -7%, 100% 88.5%, 0% 100.3%);
@@ -141,7 +141,7 @@ button[type="submit"] {
   width: 100%;
   margin-top: 2rem;
   padding: 1.25rem;
-  background-color: #5bb507;
+  background-color: #8AC13C;
   color: #000;
   border: none;
   border-radius: 6px;
