@@ -64,10 +64,11 @@
     <div class="footer-top">
       <div class="footer-left">
         <div class="logo-box">
-          <div class="logo-outline">
+          <!-- <div class="logo-outline">
             <span class="logo-text">GAME<br />PLAN</span>
-          </div>
-          <div class="tagline">YOUR VISION,<br />OUR GAMEPLAN.</div>
+          </div> -->
+          <!-- <div class="tagline">YOUR VISION,<br />OUR GAMEPLAN.</div> -->
+        <img src="/logo-footer.png" alt="">
         </div>
       </div>
       <div class="footer-center">
@@ -165,7 +166,7 @@ export default {
 .header-content {
   border: 4px solid transparent;
   border-radius: 15px;
-  background: linear-gradient(#0b1120, #0b1120) padding-box, linear-gradient(to left, #5bb507, #1859bb) border-box;
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(to left, #5bb507, #1859bb) border-box;
   background-clip: padding-box, border-box;
   display: flex;
   align-items: center;
@@ -411,8 +412,11 @@ export default {
   margin-bottom: 1rem;
 }
 
-.logo-box {
-  display: inline-block;
+.logo-box img{
+  width: 100%;
+  /* display: flex; */
+  /* justify-content: flex-start; */
+  /* align-items: flex-start; */
   position: relative;
 }
 
