@@ -1,0 +1,12 @@
+html, body{
+  /* overflow-x: hidden ; */
+
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+body{
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #000000,#00010B, #03062A, #0b1120);
+  
+}
