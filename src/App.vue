@@ -24,16 +24,33 @@
       </div>
     </header>
 
-    <section data-aos="zoom-in" :data-aos-duration="550" :data-aos-delay="200" class="hero-section">
+    <section
+      data-aos="zoom-in"
+      :data-aos-duration="550"
+      :data-aos-delay="200"
+      class="hero-section"
+    >
       <img src="/vision.png" alt="" />
     </section>
 
     <section class="services-section">
       <div class="services-left">
         <ul class="services-bullets">
-          <li :class="{ active: activeTab === 'athletes' }" @click="activeTab = 'athletes'">FOR ATHLETES</li>
-          <li :class="{ active: activeTab === 'brands' }" @click="activeTab = 'brands'">FOR BRANDS</li>
-          <li :class="{ active: activeTab === 'investors' }" @click="activeTab = 'investors'">FOR INVESTORS</li>
+          <li
+            :class="{ active: activeTab === 'athletes' }"
+            @click="activeTab = 'athletes'"
+          >
+            FOR ATHLETES
+          </li>
+          <li :class="{ active: activeTab === 'brands' }" @click="activeTab = 'brands'">
+            FOR BRANDS
+          </li>
+          <li
+            :class="{ active: activeTab === 'investors' }"
+            @click="activeTab = 'investors'"
+          >
+            FOR INVESTORS
+          </li>
         </ul>
       </div>
       <div class="services-right">
@@ -50,10 +67,14 @@
     </section>
     <div class="text-from-sercvices">
       <span v-if="activeTab === 'brands'">
-        Our unique athlete management system continuously aligns your message with the right athlete at the right time. As your brand and the world evolves, we help you pivot—maximizing impact and minimizing risk.
+        Our unique athlete management system continuously aligns your message with the
+        right athlete at the right time. As your brand and the world evolves, we help you
+        pivot—maximizing impact and minimizing risk.
       </span>
       <span v-else-if="activeTab === 'investors'">
-        We leverage our global network and unparalleled expertise to identify and invest in high-potential ventures across these thriving sectors. Our portfolio spans cutting-edge technology, sports nutrition, wellness, and beyond.
+        We leverage our global network and unparalleled expertise to identify and invest
+        in high-potential ventures across these thriving sectors. Our portfolio spans
+        cutting-edge technology, sports nutrition, wellness, and beyond.
       </span>
     </div>
     <agency-section />
@@ -61,41 +82,51 @@
     <globe-section />
     <contact-section id="touch" />
     <footer class="footer-section">
-    <div class="footer-top">
-      <div class="footer-left">
-        <div class="logo-box">
-          <!-- <div class="logo-outline">
+      <div class="footer-top">
+        <div class="footer-left">
+          <div class="logo-box">
+            <!-- <div class="logo-outline">
             <span class="logo-text">GAME<br />PLAN</span>
           </div> -->
-          <!-- <div class="tagline">YOUR VISION,<br />OUR GAMEPLAN.</div> -->
-        <img src="/logo-footer.png" alt="">
+            <!-- <div class="tagline">YOUR VISION,<br />OUR GAMEPLAN.</div> -->
+            <img src="/logo-footer.png" alt="" />
+          </div>
+        </div>
+        <div class="footer-center">
+          <h3>COMPANY</h3>
+          <ul>
+            <li><a href="#tocuh">Our Mission</a></li>
+            <li>
+              <a href="#tocuh" @click.prevent="scrollToServices('athletes')"
+                >For Athletes</a
+              >
+            </li>
+            <li>
+              <a href="#tocuh" @click.prevent="scrollToServices('brands')">For Brands</a>
+            </li>
+            <li>
+              <a href="#tocuh" @click.prevent="scrollToServices('investors')"
+                >For Investors</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-right">
+          <div class="social-icons">
+            <img src="/icons.png" alt="" />
+          </div>
         </div>
       </div>
-      <div class="footer-center">
-        <h3>COMPANY</h3>
-        <ul>
-          <li><a href="#tocuh">Our Mission</a></li>
-          <li><a href="#tocuh" @click.prevent="scrollToServices('athletes')">For Athletes</a></li>
-          <li><a href="#tocuh" @click.prevent="scrollToServices('brands')">For Brands</a></li>
-          <li><a href="#tocuh" @click.prevent="scrollToServices('investors')">For Investors</a></li>
-        </ul>
-      </div>
-      <div class="footer-right">
-        <div class="social-icons">
-          <img src="/icons.png" alt="" />
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p>© 2024 Gameplan. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
         </div>
       </div>
-    </div>
-    <div class="footer-divider"></div>
-    <div class="footer-bottom">
-      <p>© 2024 Gameplan. All Rights Reserved.</p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Cookie Policy</a>
-      </div>
-    </div>
-  </footer>
-  <div class="ffoter">get in touch with us</div>
+    </footer>
+    <div class="ffoter">get in touch with us</div>
   </div>
 </template>
 
@@ -144,7 +175,7 @@ export default {
 @font-face {
   font-family: "Heading Now Trial";
   src: url("./assets/fonts/HeadingNowTrial-Black.woff2") format("woff2"),
-      url("./assets/fonts/HeadingNowTrial-Black.woff") format("woff");
+    url("./assets/fonts/HeadingNowTrial-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
@@ -166,7 +197,8 @@ export default {
 .header-content {
   border: 4px solid transparent;
   border-radius: 15px;
-  background: linear-gradient(#000, #000) padding-box, linear-gradient(to left, #5bb507, #1859bb) border-box;
+  background: linear-gradient(#000, #000) padding-box,
+    linear-gradient(to left, #5bb507, #1859bb) border-box;
   background-clip: padding-box, border-box;
   display: flex;
   align-items: center;
@@ -197,8 +229,8 @@ export default {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 400;
-  font-size: 0.9rem;
+  font-weight: 700;
+  /* font-size: 0.9rem; */
 }
 
 .hero-section {
@@ -207,7 +239,7 @@ export default {
 }
 .hero-section img {
   width: 100%;
-  max-width: 900px;
+  /* max-width: 900px; */
   display: block;
   margin: 0 auto;
 }
@@ -296,13 +328,13 @@ export default {
 }
 
 .services-right h2 {
-  font-size: 2rem;
+  font-size: 62px;
   color: #fff;
   margin-bottom: 1rem;
 }
 
 .services-right p {
-  font-size: 1rem;
+  font-size: 37px;
   color: #ccc;
   line-height: 1.5;
   margin: 0;
@@ -391,10 +423,10 @@ export default {
   }
 }
 .footer-section {
-  margin-top: -80px;
+  /* margin-top: -60px; */
   background: black;
   color: #fff;
-  padding: 8rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .footer-top {
@@ -412,7 +444,7 @@ export default {
   margin-bottom: 1rem;
 }
 
-.logo-box img{
+.logo-box img {
   width: 100%;
   /* display: flex; */
   /* justify-content: flex-start; */
@@ -548,7 +580,7 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .footer-section{
+  .footer-section {
     margin-top: -130px;
   }
   .footer-top {
@@ -577,5 +609,4 @@ export default {
     border-left: 1px solid #333;
   }
 }
-
 </style>

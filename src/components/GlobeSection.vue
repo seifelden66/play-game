@@ -1,27 +1,29 @@
 <template>
   <section class="global-section" ref="globalSection">
     <div class="global-container">
-      <h2 class="global-heading">Truly Global, <br> Always Local.</h2>
+      <h2 class="global-heading">
+        Truly Global, <br />
+        Always Local.
+      </h2>
       <p class="offices-subheading">With five offices spanning</p>
 
       <div class="center-stage">
-        <!-- Location text (dynamically updated based on scroll thresholds) -->
         <div class="location-text">
           {{ currentLocation }}
         </div>
-        <!-- Globe graphic (rotates as you scroll) -->
         <div class="globe-graphic">
           <img :src="globeSource" alt="Globe" :style="globeStyle" />
         </div>
       </div>
-      <div class="sustainability-box">Sustainability <br> at Our Core</div>
+      <div class="sustainability-box">
+        Sustainability <br />
+        at Our Core
+      </div>
       <p class="bottom-text">
-        <span>
-            We empower brands and investors
-        </span> <br>
-         to use their capital in ways that help athletes
-        thrive and achieve their goals while enriching local communities through enhanced
-        health, sports, and lifestyle initiatives.
+        <span> We empower brands and investors </span> <br />
+        to use their capital in ways that help athletes thrive and achieve their goals
+        while enriching local communities through enhanced health, sports, and lifestyle
+        initiatives.
       </p>
     </div>
   </section>
@@ -50,28 +52,17 @@ const globeStyle = computed(() => ({
   transition: "transform 0.8s ease",
 }));
 
-// Reference to the section element
 const globalSection = ref(null);
 
-/**
- * Compute absolute scroll thresholds relative to the section’s top.
- *
- * Thresholds:
- * - North America: window.scrollY < sectionTop + (0.20 × vh)
- * - Europe:        sectionTop + (0.20 × vh) ≤ window.scrollY < sectionTop + (0.55 × vh)
- * - Asia:          sectionTop + (0.55 × vh) ≤ window.scrollY < sectionTop + (0.70 × vh)
- * - Middle East:   window.scrollY ≥ sectionTop + (0.70 × vh)
- */
 function handleScroll() {
   if (!globalSection.value) return;
   const sectionTop = globalSection.value.offsetTop;
   const vh = window.innerHeight;
 
-  // Updated thresholds: first threshold is now 0.20 * vh instead of 0.30 * vh.
+  // Thresholds for four regions
   const threshold0 = sectionTop + 0.0 * vh;
   const threshold1 = sectionTop + 0.15 * vh;
   const threshold2 = sectionTop + 0.3 * vh;
-
   const scrollY = window.scrollY;
 
   if (scrollY < threshold0) {
@@ -87,7 +78,6 @@ function handleScroll() {
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
-  // Run initially in case the section is already in view
   handleScroll();
 });
 
@@ -113,7 +103,7 @@ onUnmounted(() => {
 }
 
 .global-heading {
-  font-size: 130px;
+  font-size: 144px;
   text-align: center;
   margin: 0 0 0.5rem;
   line-height: 1.2;
@@ -128,7 +118,7 @@ onUnmounted(() => {
 
 .center-stage {
   position: relative;
-  height: 400px;
+  height: 200px;
 }
 
 .location-text {
@@ -144,7 +134,7 @@ onUnmounted(() => {
 
 .globe-graphic img {
   position: absolute;
-  right: -450px;
+  right: -700px;
   width: 450px;
   height: auto;
 }
@@ -152,19 +142,17 @@ onUnmounted(() => {
 .sustainability-box {
   border: 4px solid transparent;
   border-radius: 8px;
-  padding:.5rem 8rem;
-  background: linear-gradient(#070E58, #070E58) padding-box,
-  linear-gradient(to left, #5bb507, #1859bb) border-box;
+  padding: 0.5rem 8rem;
+  background: linear-gradient(#070e58, #070e58) padding-box,
+    linear-gradient(to left, #5bb507, #1859bb) border-box;
   color: #fff;
   font-size: 50px;
   font-weight: 700;
-  /* text-transform: uppercase; */
   text-align: center;
-  display: block; 
-  margin: 5rem auto;
+  display: block;
+  margin: 8rem auto;
   width: fit-content;
 }
-
 
 .bottom-text {
   font-size: 1rem;
@@ -174,11 +162,50 @@ onUnmounted(() => {
   margin: 5rem auto;
   text-align: center;
 }
-.bottom-text span{
-    font-size: 2rem;
-}
-/* ========== Responsive Styles ========== */
 
+.bottom-text span {
+  font-size: 2rem;
+}
+
+/* Responsive for medium screens (up to 1024px) */
+@media (min-width: 1440px) {
+    .globe-graphic img{
+        right: -700px;
+
+    }
+}
+@media (max-width: 1024px) {
+  .global-heading {
+    font-size: 120px;
+  }
+  .offices-subheading {
+    font-size: 45px;
+    margin-bottom: 2rem;
+  }
+  .center-stage {
+    height: 250px;
+  }
+  .location-text {
+    font-size: 80px;
+    left: 1rem;
+  }
+  .globe-graphic img {
+    right: -300px;
+    top: 10%;
+    width: 350px;
+  }
+  .sustainability-box {
+    font-size: 45px;
+    margin: 80px auto 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+  .bottom-text {
+    font-size: 0.95rem;
+    max-width: 95%;
+  }
+}
+
+/* Responsive for small screens (up to 768px) */
 @media (max-width: 768px) {
   .global-section {
     overflow-x: hidden;
@@ -215,6 +242,7 @@ onUnmounted(() => {
   }
 }
 
+/* Responsive for extra small screens (up to 480px) */
 @media (max-width: 480px) {
   .global-heading {
     font-size: 60px;

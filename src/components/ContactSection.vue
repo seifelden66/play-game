@@ -3,7 +3,10 @@
     <div class="contact-content">
       <!-- LEFT COLUMN: Heading + Subheading -->
       <div class="contact-left">
-        <h2>Get in touch with us</h2>
+        <h2>
+          Get in touch <br />
+          with us
+        </h2>
         <p>
           To help us to best communicate with you, please provide us with your details.
         </p>
@@ -45,7 +48,9 @@
           </div>
 
           <!-- Submit Button -->
-          <button type="submit">SUBMIT</button>
+          <div class="btn">
+            <button type="submit">SUBMIT</button>
+          </div>
         </form>
       </div>
     </div>
@@ -60,18 +65,38 @@ export default {
 
 <style scoped>
 .contact-section {
-  margin-top: 180px;
-  border-radius: 0px 30% 0px 0px;
-  background-color: #8AC13C;
+  /* Remove any single background-color or background-image properties */
+  /* Then layer the shape (on top) and the gradient (behind) */
+  background: url("/green-shape.png") no-repeat top left / cover,
+    linear-gradient(to bottom, #090c56, #000);
+
+  /* The rest of your styles */
   color: #000;
-  padding: 6rem 2rem 8rem;
-  clip-path: polygon(0% 12.5%, 100% -7%, 100% 88.5%, 0% 100.3%);
-
+  min-height: 100vh;
+  /* etc. */
 }
-
+.btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.btn button {
+  margin-left: auto;
+  font-size: 16px;
+  color: #abf149;
+  width: 124px;
+  height: 42px;
+  padding: 10px;
+  border-radius: 0 24px 0 0;
+  background: #1c3901;
+  margin-left: auto;
+}
 .contact-content {
+  height: 100vh;
+
+  z-index: 999999999;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: center;
   display: flex;
   gap: 4rem;
 }
@@ -135,11 +160,11 @@ export default {
   grid-column: 1 / -1;
 }
 
-button[type="submit"] {
+/* button[type="submit"] {
   width: 100%;
   margin-top: 2rem;
   padding: 1.25rem;
-  background-color: #8AC13C;
+  background-color: #8ac13c;
   color: #000;
   border: none;
   border-radius: 6px;
@@ -152,9 +177,14 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #4da006;
   transform: translateY(-2px);
-}
+} */
 
 @media (max-width: 768px) {
+  .contact-section {
+    display: flex;
+    align-items: center;
+    height: 200vh;
+  }
   .contact-content {
     flex-direction: column;
     gap: 2rem;
