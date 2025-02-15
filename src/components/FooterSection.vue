@@ -203,6 +203,18 @@
     padding: 10px;
   }
   
+  @media (max-width: 768px) {
+    .footer-top{
+        align-items: center;
+        justify-items: center;
+    }
+    .footer-right{
+        text-align: center;
+    }
+    .footer-left{
+        text-align: center;
+    }
+  }
   @media (min-width: 768px) {
     .footer-left {
       padding: 0 1rem;
