@@ -20,7 +20,7 @@
         at Our Core
       </div>
       <p class="bottom-text">
-        <span> We empower brands and investors </span> <br />
+        <span class="top"> We empower brands and investors </span> <br />
         to use their capital in ways that help athletes thrive and achieve their goals
         while enriching local communities through enhanced health, sports, and lifestyle
         initiatives.
@@ -155,16 +155,16 @@ onUnmounted(() => {
 }
 
 .bottom-text {
-  font-size: 1rem;
+  font-size: 38.75px;
   color: #ccc;
   line-height: 1.5;
-  max-width: 900px;
+  /* max-width: 900px; */
   margin: 5rem auto;
   text-align: center;
 }
 
 .bottom-text span {
-  font-size: 2rem;
+  font-size: 62px;
 }
 
 /* Responsive for medium screens (up to 1024px) */

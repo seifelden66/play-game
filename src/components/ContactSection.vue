@@ -68,7 +68,7 @@ export default {
   /* Remove any single background-color or background-image properties */
   /* Then layer the shape (on top) and the gradient (behind) */
   background: url("/green-shape.png") no-repeat top left / cover,
-    linear-gradient(to bottom, #090c56, #000);
+    linear-gradient(to bottom, #080c5c, #000);
 
   /* The rest of your styles */
   color: #000;
@@ -160,24 +160,7 @@ export default {
   grid-column: 1 / -1;
 }
 
-/* button[type="submit"] {
-  width: 100%;
-  margin-top: 2rem;
-  padding: 1.25rem;
-  background-color: #8ac13c;
-  color: #000;
-  border: none;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-button[type="submit"]:hover {
-  background-color: #4da006;
-  transform: translateY(-2px);
-} */
 
 @media (max-width: 768px) {
   .contact-section {

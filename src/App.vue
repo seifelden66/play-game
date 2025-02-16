@@ -119,14 +119,14 @@
       </div>
       <div class="footer-divider"></div>
       <div class="footer-bottom">
-        <p>© 2024 Gameplan. All Rights Reserved.</p>
+        <p>© 2025 Gameplan. All Rights Reserved.</p>
         <div class="footer-links">
           <a href="#">Privacy Policy</a>
           <a href="#">Cookie Policy</a>
         </div>
       </div>
     </footer>
-    <div class="ffoter">get in touch with us</div>
+    <div class="ffoter">GET IN TOUCH WITH US</div>
   </div>
 </template>
 
@@ -576,6 +576,8 @@ export default {
   background: white;
   color: #0a1271;
   text-align: center;
+  font-size: 41px;
+  font-weight: 700;
   padding: 10px;
 }
 
