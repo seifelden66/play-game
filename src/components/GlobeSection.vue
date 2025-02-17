@@ -157,14 +157,14 @@ onUnmounted(() => {
 .bottom-text {
   font-size: 38.75px;
   color: #ccc;
-  line-height: 1.5;
+  line-height: 1.4;
   /* max-width: 900px; */
   margin: 5rem auto;
   text-align: center;
 }
 
 .bottom-text span {
-  font-size: 62px;
+  font-size: 52px;
 }
 
 /* Responsive for medium screens (up to 1024px) */
@@ -239,6 +239,7 @@ onUnmounted(() => {
   .bottom-text {
     font-size: 0.9rem;
     max-width: 90%;
+    margin: 1rem auto;
   }
 }
 

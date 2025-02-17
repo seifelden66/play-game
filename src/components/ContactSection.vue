@@ -31,7 +31,11 @@
             </div>
 
             <div class="form-group full-width">
-              <textarea id="enquiry" placeholder="Please write us your enquiry*" required></textarea>
+              <textarea
+                id="enquiry"
+                placeholder="Please write us your enquiry*"
+                required
+              ></textarea>
             </div>
           </div>
 
@@ -79,10 +83,9 @@ export default {
 
 .contact-content {
   /* height: 100vh; */
-  z-index: 999999999;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 180px;
+  padding-top: 150px;
   align-items: baseline;
   display: flex;
   gap: 4rem;
@@ -141,7 +144,7 @@ export default {
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #000;
-  font-family: 'Glacial Indifference', sans-serif;
+  font-family: "Glacial Indifference", sans-serif;
 }
 
 .form-group input:focus,
@@ -158,7 +161,7 @@ export default {
   .contact-section {
     display: flex;
     align-items: center;
-    height: 200vh;
+    min-height: 150vh;
     margin-top: 0px;
   }
   .contact-content {
@@ -177,6 +180,14 @@ export default {
   }
   .full-width {
     grid-column: 1;
+  }
+}
+@media (max-width: 400px) {
+  .contact-section {
+    display: flex;
+    align-items: center;
+    min-height: 170vh;
+    margin-top: 0px;
   }
 }
 </style>

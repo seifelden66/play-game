@@ -23,15 +23,12 @@
         </nav>
       </div>
     </header>
-
-    <section
-      data-aos="zoom-in"
-      :data-aos-duration="550"
-      :data-aos-delay="200"
-      class="hero-section"
-    >
-      <img src="/vision.png" alt="" />
-    </section>
+    <div class="hero-section">
+      <img src="/your-vision.png" alt="" />
+      <section data-aos="zoom-in" :data-aos-duration="350" :data-aos-delay="50">
+        <img src="/our-gameplan.png" alt="" />
+      </section>
+    </div>
 
     <section class="services-section">
       <div class="services-left">
@@ -95,7 +92,6 @@
         <div class="footer-center">
           <h3>COMPANY</h3>
           <ul>
-            <li><a href="#tocuh">Our Mission</a></li>
             <li>
               <a href="#tocuh" @click.prevent="scrollToServices('athletes')"
                 >For Athletes</a
@@ -127,9 +123,7 @@
       </div>
     </footer>
     <div class="ffoter">
-      <div class="ffoter">
-        <a href="#touch"> get in touch with us </a>
-      </div>
+      <a href="#touch"> get in touch with us </a>
     </div>
   </div>
 </template>
@@ -195,7 +189,7 @@ export default {
 
 .top-header {
   box-sizing: border-box;
-  padding-top: 70px;
+  padding-top: 20px;
 }
 
 .header-content {
@@ -208,7 +202,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   max-width: 983px;
-  height: 59px;
+  height: 50px;
   margin: 0 auto;
   padding: 1rem 2rem;
 }
@@ -239,13 +233,13 @@ export default {
 
 .hero-section {
   text-align: center;
-  padding: 5rem 1rem;
+  padding: 2rem 1rem;
 }
-.hero-section img {
+.hero-section img:nth-child(2) {
   width: 100%;
   /* max-width: 900px; */
-  display: block;
-  margin: 0 auto;
+  /* display: block; */
+  /* margin: 0 auto; */
 }
 
 .hero-text {
@@ -362,6 +356,9 @@ export default {
   }
   .hero-section {
     padding: 8rem 1rem;
+  }
+  .hero-section img{
+    width: 100%;
   }
   .hero-text,
   .animated-text {
@@ -584,11 +581,11 @@ export default {
   background: white;
   color: #0a1271;
   text-align: center;
-  font-size: 41px;
+  font-size: clamp(1.5rem, 2.5vw, 41px);
   font-weight: 700;
   padding: 10px;
 }
-.ffoter a{
+.ffoter a {
   text-decoration: none;
   color: inherit;
 }
