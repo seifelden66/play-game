@@ -77,7 +77,7 @@
         cutting-edge technology, sports nutrition, wellness, and beyond.
       </span>
     </div>
-    <agency-section />
+    <agency-section v-if="activeTab === 'athletes'"/>
     <stats-section />
     <globe-section />
     <contact-section id="touch" />
@@ -278,7 +278,7 @@ export default {
 
 .text-from-sercvices {
   text-align: center;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   width: 100%;
   max-width: 1130px;
   margin: 0 auto;
@@ -308,7 +308,7 @@ export default {
   font-size: 27px;
   margin-bottom: 1rem;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 700;
   color: rgba(124, 124, 124, 0.51);
   transition: color 0.2s;
 }
@@ -386,6 +386,7 @@ export default {
 }
 @media (max-width: 480px) {
   .header-content {
+    justify-content: center;
     align-items: center;
     height: auto;
   }
@@ -393,7 +394,7 @@ export default {
     margin-bottom: 1rem;
   }
   .menu ul {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 0.5rem;
   }
   .hero-section {
@@ -475,10 +476,13 @@ export default {
 }
 
 .footer-center {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   min-width: 180px;
   margin-bottom: 1rem;
-  text-align: center;
+  align-items: center;
+  /* text-align: center; */
 }
 
 .footer-center h3 {

@@ -8,8 +8,7 @@
       <p class="offices-subheading">With five offices spanning</p>
 
       <div class="center-stage">
-        <div class="location-text">
-          {{ currentLocation }}
+        <div class="location-text" v-html="currentLocation">
         </div>
         <div class="globe-graphic">
           <img :src="globeSource" alt="Globe" :style="globeStyle" />
@@ -35,10 +34,10 @@ import { ref, computed, onMounted, onUnmounted } from "vue";
 const globeSource = "/globe-ball.png";
 
 const locations = [
-  "North America (North Carolina)",
-  "Europe (Germany)",
-  "Asia (Indonesia)",
-  "The Middle East (Egypt and Dubai)",
+  "North America<br>(North Carolina)",
+  "Europe<br>(Germany)",
+  "Asia<br>(Indonesia)",
+  "The Middle East<br>(Egypt and Dubai)",
 ];
 
 const angles = [-22.15, -6.17, 13.64, 19.78];
@@ -60,9 +59,9 @@ function handleScroll() {
   const vh = window.innerHeight;
 
   // Thresholds for four regions
-  const threshold0 = sectionTop + 0.0 * vh;
-  const threshold1 = sectionTop + 0.15 * vh;
-  const threshold2 = sectionTop + 0.3 * vh;
+  const threshold0 = sectionTop + 0.1 * vh;
+  const threshold1 = sectionTop + 0.25 * vh;
+  const threshold2 = sectionTop + 0.35 * vh;
   const scrollY = window.scrollY;
 
   if (scrollY < threshold0) {
@@ -91,7 +90,7 @@ onUnmounted(() => {
   margin-top: 200px;
   display: flex;
   align-items: center;
-  height: 120vh;
+  /* height: 120vh; */
   position: relative;
   padding: 1rem;
   color: #fff;
@@ -134,7 +133,7 @@ onUnmounted(() => {
 
 .globe-graphic img {
   position: absolute;
-  right: -700px;
+  right: -300px;
   width: 450px;
   height: auto;
 }
@@ -150,7 +149,7 @@ onUnmounted(() => {
   font-weight: 700;
   text-align: center;
   display: block;
-  margin: 8rem auto;
+  margin: 15rem auto;
   width: fit-content;
 }
 
@@ -170,7 +169,7 @@ onUnmounted(() => {
 /* Responsive for medium screens (up to 1024px) */
 @media (min-width: 1440px) {
     .globe-graphic img{
-        right: -700px;
+        /* right: -300px; */
 
     }
 }
@@ -190,7 +189,7 @@ onUnmounted(() => {
     left: 1rem;
   }
   .globe-graphic img {
-    right: -300px;
+    right: -250px;
     top: 10%;
     width: 350px;
   }
@@ -227,7 +226,7 @@ onUnmounted(() => {
     left: 1rem;
   }
   .globe-graphic img {
-    right: -200px;
+    right: -250px;
     top: 10%;
     width: 300px;
   }
@@ -259,7 +258,7 @@ onUnmounted(() => {
     left: 0.5rem;
   }
   .globe-graphic img {
-    right: -100px;
+    right: -150px;
     top: 8%;
     width: 220px;
   }

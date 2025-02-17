@@ -1,7 +1,6 @@
 <template>
   <section class="contact-section">
     <div class="contact-content">
-      <!-- LEFT COLUMN: Heading + Subheading -->
       <div class="contact-left">
         <h2>
           Get in touch <br />
@@ -12,42 +11,30 @@
         </p>
       </div>
 
-      <!-- RIGHT COLUMN: Form -->
       <div class="contact-right">
         <form @submit.prevent>
           <div class="form-grid">
-            <!-- First Name -->
             <div class="form-group">
-              <label for="firstName">First Name*</label>
-              <input type="text" id="firstName" required />
+              <input type="text" placeholder="First Name*" id="firstName" required />
             </div>
 
-            <!-- Last Name -->
             <div class="form-group">
-              <label for="lastName">Last Name*</label>
-              <input type="text" id="lastName" required />
+              <input type="text" placeholder="Last Name*" id="lastName" required />
             </div>
 
-            <!-- Email -->
             <div class="form-group">
-              <label for="email">Email*</label>
-              <input type="email" id="email" required />
+              <input type="email" placeholder="Email*" id="email" required />
             </div>
 
-            <!-- Mobile -->
             <div class="form-group">
-              <label for="mobile">Mobile*</label>
-              <input type="tel" id="mobile" required />
+              <input placeholder="Mobile*" type="tel" id="mobile" required />
             </div>
 
-            <!-- Enquiry (spans full width) -->
             <div class="form-group full-width">
-              <label for="enquiry">Please write us your enquiry*</label>
-              <textarea id="enquiry" rows="4" required></textarea>
+              <textarea id="enquiry" placeholder="Please write us your enquiry*" required></textarea>
             </div>
           </div>
 
-          <!-- Submit Button -->
           <div class="btn">
             <button type="submit">SUBMIT</button>
           </div>
@@ -65,20 +52,18 @@ export default {
 
 <style scoped>
 .contact-section {
-  /* Remove any single background-color or background-image properties */
-  /* Then layer the shape (on top) and the gradient (behind) */
   background: url("/green-shape.png") no-repeat top left / cover,
-    linear-gradient(to bottom, #080c5c, #000);
-
-  /* The rest of your styles */
+    linear-gradient(to bottom, #080c54, #000);
+  margin-top: 90px;
   color: #000;
   min-height: 100vh;
-  /* etc. */
 }
+
 .btn {
   display: flex;
   justify-content: flex-end;
 }
+
 .btn button {
   margin-left: auto;
   font-size: 16px;
@@ -88,11 +73,10 @@ export default {
   padding: 10px;
   border-radius: 0 24px 0 0;
   background: #1c3901;
-  margin-left: auto;
 }
+
 .contact-content {
   height: 100vh;
-
   z-index: 999999999;
   max-width: 1200px;
   margin: 0 auto;
@@ -150,6 +134,15 @@ export default {
   transition: border-color 0.3s ease;
 }
 
+/* 
+   1) Make placeholders black. 
+   2) Use vendor prefixes for broader browser support if needed.
+*/
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #000;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
   border-bottom-color: #5bb507;
@@ -160,32 +153,27 @@ export default {
   grid-column: 1 / -1;
 }
 
-
-
 @media (max-width: 768px) {
   .contact-section {
     display: flex;
     align-items: center;
     height: 200vh;
+    margin-top: 0px;
   }
   .contact-content {
     flex-direction: column;
     gap: 2rem;
   }
-
   .contact-left {
     text-align: center;
     padding-top: 0;
   }
-
   .contact-left p {
     max-width: 100%;
   }
-
   .form-grid {
     grid-template-columns: 1fr;
   }
-
   .full-width {
     grid-column: 1;
   }
