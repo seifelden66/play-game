@@ -34,7 +34,7 @@
 
 <style scoped>
 .stats-section {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   align-items: center;
   padding: 3rem 1rem;
