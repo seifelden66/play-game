@@ -77,7 +77,7 @@
         cutting-edge technology, sports nutrition, wellness, and beyond.
       </span>
     </div>
-    <agency-section v-if="activeTab === 'athletes'"/>
+    <agency-section v-if="activeTab === 'athletes'" />
     <stats-section />
     <globe-section />
     <contact-section id="touch" />
@@ -126,7 +126,11 @@
         </div>
       </div>
     </footer>
-    <div class="ffoter">GET IN TOUCH WITH US</div>
+    <div class="ffoter">
+      <div class="ffoter">
+        <a href="#touch"> get in touch with us </a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -584,7 +588,10 @@ export default {
   font-weight: 700;
   padding: 10px;
 }
-
+.ffoter a{
+  text-decoration: none;
+  color: inherit;
+}
 @media (max-width: 768px) {
   .footer-section {
     margin-top: -130px;

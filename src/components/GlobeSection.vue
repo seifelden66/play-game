@@ -150,6 +150,7 @@ onUnmounted(() => {
   text-align: center;
   display: block;
   margin: 15rem auto;
+  margin-bottom: 135px;
   width: fit-content;
 }
 

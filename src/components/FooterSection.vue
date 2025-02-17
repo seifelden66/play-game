@@ -33,7 +33,9 @@
       </div>
     </div>
   </footer>
-  <div class="ffoter">get in touch with us</div>
+  <div class="ffoter">
+    <a href="#form"> get in touch with us </a>
+  </div>
 </template>
 
 <script>
@@ -43,7 +45,6 @@ export default {
 </script>
 
 <style scoped>
-
 .footer-section {
   margin-top: -70px;
   background: black;

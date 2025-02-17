@@ -60,6 +60,7 @@ export default {
 }
 
 .btn {
+  margin-top: 20px;
   display: flex;
   justify-content: flex-end;
 }
@@ -72,15 +73,17 @@ export default {
   height: 42px;
   padding: 10px;
   border-radius: 0 24px 0 0;
+  border: none;
   background: #1c3901;
 }
 
 .contact-content {
-  height: 100vh;
+  /* height: 100vh; */
   z-index: 999999999;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: center;
+  padding-top: 300px;
+  align-items: baseline;
   display: flex;
   gap: 4rem;
 }
@@ -134,13 +137,11 @@ export default {
   transition: border-color 0.3s ease;
 }
 
-/* 
-   1) Make placeholders black. 
-   2) Use vendor prefixes for broader browser support if needed.
-*/
+/* Placeholder style with new font-family */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #000;
+  font-family: 'Glacial Indifference', sans-serif;
 }
 
 .form-group input:focus,
