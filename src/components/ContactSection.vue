@@ -82,7 +82,7 @@ export default {
   z-index: 999999999;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 220px;
+  padding-top: 180px;
   align-items: baseline;
   display: flex;
   gap: 4rem;
