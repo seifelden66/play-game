@@ -29,8 +29,8 @@
       <section
         class="gameplan"
         data-aos="zoom-in"
-        :data-aos-duration="350"
-        :data-aos-delay="50"
+        :data-aos-duration="300"
+        :data-aos-delay="150"
       >
         OUR GAMEPLAN
         <!-- <img src="/our-gameplan.png" alt="" /> -->
@@ -296,7 +296,7 @@ export default {
 
 .hero-section {
   text-align: center;
-  padding: 22rem 1rem;
+  padding: 10rem 1rem;
   font-family: "Glacial Indifference", sans-serif !important; /* Force override */
   font-weight: 700;
   font-size: 106.13px;
@@ -468,7 +468,7 @@ section.gameplan {
   }
 
   .hero-section {
-    padding: 15rem 1rem;
+    padding: 7rem 1rem;
     font-size: 40px;
   }
   section.gameplan {
