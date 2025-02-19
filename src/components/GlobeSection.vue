@@ -16,7 +16,7 @@
       <div class="cont">
         <img src="/top-sust.png" alt="" />
         <div class="sus2">
-          <img src="/sus-top2.png" alt="" />
+          <img src="/green_sb.png" alt="" />
         </div>
       </div>
       <div class="sus-mid">
@@ -46,7 +46,8 @@ const locations = [
   "The Middle East<br>(Egypt and Dubai)",
 ];
 
-const angles = [-22.15, -6.17, 13.64, 19.78];
+// const angles = [-22.15, -6.17, 13.64, 19.78];
+const angles = [0, 90, 180, 270];;
 
 const currentIndex = ref(0);
 const currentLocation = computed(() => locations[currentIndex.value]);
@@ -54,67 +55,83 @@ const currentAngle = computed(() => angles[currentIndex.value]);
 
 const globeStyle = computed(() => ({
   transform: `rotate(${currentAngle.value}deg)`,
-  transition: "transform 0.8s ease",
+  transition: "transform 0.8s ease-in-out",
 }));
 
-const globalSection = ref(null);
+let intervalId = null;
 
-function handleScroll() {
-  if (!globalSection.value) return;
-  const sectionTop = globalSection.value.offsetTop;
-  const vh = window.innerHeight;
-
-  // Thresholds for four regions
-  const threshold0 = sectionTop + 0.1 * vh;
-  const threshold1 = sectionTop + 0.25 * vh;
-  const threshold2 = sectionTop + 0.35 * vh;
-  const scrollY = window.scrollY;
-
-  if (scrollY < threshold0) {
-    currentIndex.value = 0;
-  } else if (scrollY < threshold1) {
-    currentIndex.value = 1;
-  } else if (scrollY < threshold2) {
-    currentIndex.value = 2;
-  } else {
-    currentIndex.value = 3;
-  }
+function rotateLocation() {
+  currentIndex.value = (currentIndex.value + 1) % locations.length;
 }
 
 onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-  handleScroll();
+  intervalId = setInterval(rotateLocation, 2000);
 });
 
 onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
+  if (intervalId) {
+    clearInterval(intervalId);
+  }
 });
 </script>
 
 <style scoped>
 .cont {
   margin-top: 200px;
-  /* height: 400px; */
   width: 120%;
   margin-left: -150px;
-  position: relative;
+  display: grid;
+  grid-template-areas: "stack";
 }
-.cont img {
-  left: 0;
+
+.cont > img {
+  width: 100%;
+  grid-area: stack;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  z-index: 2; /* Add this to make the first image appear on top */
+}
+
+.sus2 {
+  grid-area: stack;
+  transform: translateY(20px);
+  z-index: 1; /* Lower z-index for the second image */
+}
+
+.sus2 img {
+  opacity: 0.5;
   width: 100%;
 }
+
+/* Adjust for responsive design */
+@media (max-width: 768px) {
+  .cont {
+    width: 150%;
+    margin-left: -100px;
+    margin-bottom: 200px;
+  }
+  
+  .sus2 {
+    /* transform: translateY(-150px); */
+  }
+}
+
+@media (max-width: 480px) {
+  .sus2 {
+    transform: translateY(-100px);
+  }
+}
+
 .global-section {
   margin-top: 200px;
   display: flex;
   align-items: center;
-  /* height: 120vh; */
   position: relative;
   padding: 1rem;
   color: #fff;
 }
 
 .global-container {
-  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
@@ -136,13 +153,8 @@ onUnmounted(() => {
   position: relative;
   height: 200px;
 }
-.sus2{
-  margin-top: -250px;
-  margin-bottom: 100px;
-  /* color: #F0EFEF; */
-  opacity: .5;
-  z-index: -9999;
-}
+
+
 .location-text {
   height: 60px;
   font-size: 95px;
@@ -152,6 +164,7 @@ onUnmounted(() => {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+  transition: opacity 0.4s ease-in-out;
 }
 
 .globe-graphic img {
@@ -159,24 +172,21 @@ onUnmounted(() => {
   right: -300px;
   width: 450px;
   height: auto;
+  transition: transform 0.8s ease-in-out;
 }
 
 .sus-last {
-  /* Large white box */
   background: #fff;
-  color: #000; /* black text */
+  color: #000;
   font-size: clamp(32px, 4vw, 56.5px);
   font-weight: 700;
   text-align: center;
   line-height: 1.2;
   letter-spacing: 0;
   border-radius: 37px;
-  
-  /* Remove hard-coded width/height/positioning; make it responsive */
-  max-width: 963px; /* or any suitable max-width */
-  margin: 4rem auto; /* center horizontally with spacing above/below */
-  padding: 3rem 2rem; /* spacing inside the box */
-  
+  max-width: 963px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -184,7 +194,6 @@ onUnmounted(() => {
 }
 
 .inside {
-  /* Smaller green box inside */
   background: #5bb507;
   color: #fff;
   font-weight: 400;
@@ -192,15 +201,12 @@ onUnmounted(() => {
   line-height: 1.4;
   letter-spacing: 0;
   text-align: center;
-  
-  /* Rounded corners */
   border-radius: 63.5px;
-  
-  /* Responsive sizing */
-  max-width: 860px; /* narrower than .sus-last so it looks inset */
+  max-width: 860px;
+  height: 127;
   width: 100%;
-  margin: 0 auto; /* center inside .sus-last */
-  padding: 2rem; /* space around the text */
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .sustainability-box {
@@ -223,7 +229,6 @@ onUnmounted(() => {
   font-size: 38.75px;
   color: #ccc;
   line-height: 1.4;
-  /* max-width: 900px; */
   margin: 5rem auto;
   text-align: center;
 }
@@ -232,12 +237,12 @@ onUnmounted(() => {
   font-size: 52px;
 }
 
-/* Responsive for medium screens (up to 1024px) */
 @media (min-width: 1440px) {
   .globe-graphic img {
     /* right: -300px; */
   }
 }
+
 @media (max-width: 1024px) {
   .global-heading {
     font-size: 120px;
@@ -269,9 +274,8 @@ onUnmounted(() => {
   }
 }
 
-/* Responsive for small screens (up to 768px) */
 @media (max-width: 768px) {
-  .sus-mid img{
+  .sus-mid img {
     width: 100%;
   }
   .global-section {
@@ -293,29 +297,27 @@ onUnmounted(() => {
     font-size: 50px;
     left: 1rem;
   }
-  .sus2{
-  margin-top: 0px;
-  margin-bottom: 0px;
-  /* color: #F0EFEF; */
-  opacity: .5;
-  z-index: -9999;
-}
-  .inside{
+  .sus2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    opacity: 0.5;
+    z-index: -9999;
+  }
+  .inside {
     padding: 20px;
     width: auto;
   }
   .cont {
-  margin-top: 200px;
-  /* height: 400px; */
-  margin-bottom: 200px;
-  width: 150%;
-  margin-left: -100px;
-  position: relative;
-}
-.cont img {
-  left: 0;
-  width: 100%;
-}
+    margin-top: 200px;
+    margin-bottom: 200px;
+    width: 150%;
+    margin-left: -100px;
+    position: relative;
+  }
+  .cont img {
+    left: 0;
+    width: 100%;
+  }
   .globe-graphic img {
     right: -250px;
     top: 10%;
@@ -333,7 +335,6 @@ onUnmounted(() => {
   }
 }
 
-/* Responsive for extra small screens (up to 480px) */
 @media (max-width: 480px) {
   .global-heading {
     font-size: 60px;

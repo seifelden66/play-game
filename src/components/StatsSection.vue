@@ -1,30 +1,6 @@
 <template>
   <section class="stats-section">
-    <div class="stats-grid">
-      <!-- Top-left box -->
-      <div class="stats-box">
-        <h3>20+</h3>
-        <p>Athletes</p>
-      </div>
-
-      <!-- Top-right box -->
-      <div class="stats-box">
-        <h3>€1.5M+</h3>
-        <p>Under Management</p>
-      </div>
-
-      <!-- Bottom-left box -->
-      <div class="stats-box">
-        <h3>7</h3>
-        <p>Sports</p>
-      </div>
-
-      <!-- Bottom-right box -->
-      <div class="stats-box">
-        <h3>4</h3>
-        <p>Olympic Participations</p>
-      </div>
-    </div>
+   <img src="/info-in-shapes.png" alt="">
   </section>
 </template>
 
@@ -36,9 +12,14 @@
 .stats-section {
   display: flex;
   align-items: center;
+  justify-items: center;
   padding: 3rem 1rem;
 }
-
+.stats-section img{
+  max-width: 986px;
+  height: 626px;
+  margin: 0 auto;
+}
 /* 2×2 grid */
 .stats-grid {
   margin: 0 auto;
@@ -74,11 +55,9 @@
   border-radius: inherit;
   padding: 11px; /* “Border” thickness */
   background: linear-gradient(to right, #0032ff, #00ff3c);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
   z-index: -1;
 }
 
@@ -86,7 +65,7 @@
 .stats-grid > div:nth-child(1)::before,
 .stats-grid > div:nth-child(2)::before {
   /* Override the default gradient for top boxes */
-  background: #0032ff; 
+  background: #0032ff;
 }
 
 /* ===== Rounded Corners for “Outer” Edges ===== */

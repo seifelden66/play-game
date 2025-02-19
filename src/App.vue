@@ -261,16 +261,20 @@ export default {
   font-weight: 700;
   font-size: 106.13px;
   line-height: 155px;
-  letter-spacing: 0%;
-  text-align: center;
+  /* Other styling as needed */
 }
+
 section.gameplan {
-  /* font-family: Glacial Indifference; */
+  display: inline-block; /* ensures the gradient is clipped to the text */
   font-weight: 700;
   font-size: 150px;
   line-height: 143px;
-  letter-spacing: 0%;
   text-align: center;
+
+  /* Gradient from white (top) to darker gray (bottom) */
+  background: linear-gradient(180deg, #ffffff 0%, #666666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero-section img:nth-child(2) {
   width: 100%;
@@ -373,27 +377,39 @@ section.gameplan {
 }
 
 /* Create a pseudo-element to simulate the gradient border */
+/* Remove the general ::before from all li */
 .services-bullets li::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: inherit;
-  padding: 2px; /* This value controls the "border" thickness */
-  background: linear-gradient(to right, #0032ff, #00ff3c);
-  /* Use masking so that only the border area is visible */
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: -1;
+  content: none;
 }
 
+/* Style the active item itself */
 .services-bullets li.active {
+  position: relative; /* Needed for absolutely positioned ::before */
   margin-left: 20px;
   color: #fff;
   font-size: 37px;
+
+  /* Increase padding as desired */
+  /* padding: 0.5rem; */
+  width: 283px;
+  height: 67px;
+  /* Apply a 15px border radius to the active item */
+  border-radius: 15px;
+}
+
+.services-bullets li.active::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top: 0; right: 0; bottom: 0; left: 0; */
+  border-radius: inherit; /* Inherit the 15px radius from the parent */
+  padding: 2px; /* Border thickness (keep the same if you want the same thickness) */
+  background: linear-gradient(to right, #0032ff, #00ff3c);
+
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  z-index: -1;
 }
 
 .services-right {
