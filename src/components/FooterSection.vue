@@ -34,7 +34,7 @@
     </div>
   </footer>
   <div class="ffoter">
-    <a href="#form"> get in touch with us </a>
+    <a href="#form"> GET IN TOUCH WITH US </a>
   </div>
 </template>
 
@@ -196,7 +196,7 @@ export default {
   background: white;
   color: #0a1271;
   text-align: center;
-  padding: 10px;
+  padding: 12px;
 }
 
 @media (max-width: 768px) {

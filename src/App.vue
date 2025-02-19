@@ -158,7 +158,7 @@
       </div>
     </footer>
     <div class="ffoter">
-      <a href="#touch"> get in touch with us </a>
+      <a href="#touch"> GET IN TOUCH WITH US </a>
     </div>
   </div>
 </template>
@@ -237,7 +237,7 @@ export default {
   opacity: 0.8;
   border-radius: 37px;
   grid-template-columns: repeat(5, 1fr);
-  gap: 5rem;
+  gap: 3rem;
   justify-items: center;
   align-items: center;
   width: 100%;
@@ -246,7 +246,7 @@ export default {
 }
 
 .logos-grid img {
-  max-width: 100px;  
+  max-width: 110px;  
   height: auto;
   display: block;
 }
@@ -296,7 +296,7 @@ export default {
 
 .hero-section {
   text-align: center;
-  padding: 20rem 1rem;
+  padding: 22rem 1rem;
   font-family: "Glacial Indifference", sans-serif !important; /* Force override */
   font-weight: 700;
   font-size: 106.13px;
@@ -304,13 +304,13 @@ export default {
 }
 
 section.gameplan {
-  margin-top: 50px;
+  margin-top: 55px;
   display: inline-block;
   font-weight: 700;
   font-size: 150px;
   line-height: 143px;
   text-align: center;
-  background: linear-gradient(180deg, #ffffff 0%, #565656 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #4f5076 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -318,19 +318,6 @@ section.gameplan {
   width: 100%;
 }
 
-.animated-text {
-  display: block;
-  font-family: "Heading Now Trial", sans-serif;
-  font-size: clamp(3rem, 15vw, 837px);
-  font-weight: 900;
-  line-height: 0.9;
-  text-transform: uppercase;
-
-  /* Same gradient as above */
-  background: linear-gradient(180deg, #ffffff 0%, #545454 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 .services-section {
   max-width: 1130px;
@@ -533,8 +520,7 @@ section.gameplan {
   .hero-section {
     padding: 6rem 1rem;
   }
-  .hero-text,
-  .animated-text {
+  .hero-text {
     font-size: 16vw;
   }
   .services-section {
@@ -715,7 +701,7 @@ section.gameplan {
   text-align: center;
   font-size: clamp(1.5rem, 2.5vw, 41px);
   font-weight: 700;
-  padding: 10px;
+  padding: 15px;
 }
 .ffoter a {
   text-decoration: none;
