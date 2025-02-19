@@ -466,10 +466,9 @@ section.gameplan {
   .menu li a {
     font-size: 0.8rem;
   }
+
   .hero-section {
-    padding: 8rem 1rem;
-  }
-  .hero-section {
+    padding: 15rem 1rem;
     font-size: 40px;
   }
   section.gameplan {
@@ -516,9 +515,6 @@ section.gameplan {
   .menu ul {
     /* flex-direction: column; */
     gap: 0.5rem;
-  }
-  .hero-section {
-    padding: 6rem 1rem;
   }
   .hero-text {
     font-size: 16vw;
