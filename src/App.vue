@@ -92,7 +92,22 @@
     <section class="sports-section">
       <h2>We Work With</h2>
       <div class="img">
-        <img src="/logos.png" alt="" />
+        <!-- <div class="logos-container"> -->
+          <div class="logos-grid">
+            <img src="/butterfly.png" alt="Butterfly" />
+            <img src="/egyptair.png" alt="EgyptAir" />
+            <img src="/ahly.png" alt="Al Ahly" />
+            <img src="/deutsch.png" alt="Deutscher Tischtennis Bund" />
+            <img src="/ittihad.png" alt="Ittihad Club" />
+            <img src="/vodafone.png" alt="Vodafone" />
+            <img src="/gb.png" alt="Global Brands Group" />
+            <img src="/bdc.png" alt="Banque du Caire" />
+            <img src="/borussia.png" alt="Borussia Düsseldorf" />
+            <img src="/enppi.png" alt="Zamalek" />
+          </div>
+        <!-- </div>  -->
+
+        <!-- <img src="/logos.png" alt="" /> -->
       </div>
     </section>
 
@@ -212,6 +227,31 @@ export default {
   padding-top: 20px;
 }
 
+
+.logos-grid {
+  display: grid;
+  background: #f3f3f3;
+  width: 1288px;
+  height: 422px;
+  margin: 0 auto;
+  opacity: 0.8;
+  border-radius: 37px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5rem;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem; 
+}
+
+.logos-grid img {
+  max-width: 100px;  
+  height: auto;
+  display: block;
+}
+
+
 .header-content {
   border: 4px solid transparent;
   border-radius: 15px;
@@ -261,38 +301,21 @@ export default {
   font-weight: 700;
   font-size: 106.13px;
   line-height: 155px;
-  /* Other styling as needed */
 }
 
 section.gameplan {
-  display: inline-block; /* ensures the gradient is clipped to the text */
+  margin-top: 50px;
+  display: inline-block;
   font-weight: 700;
   font-size: 150px;
   line-height: 143px;
   text-align: center;
-
-  /* Gradient from white (top) to darker gray (bottom) */
-  background: linear-gradient(180deg, #ffffff 0%, #666666 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #565656 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .hero-section img:nth-child(2) {
   width: 100%;
-  /* max-width: 900px; */
-  /* display: block; */
-  /* margin: 0 auto; */
-}
-
-.hero-text {
-  margin: 0;
-  font-family: "Heading Now Trial", sans-serif;
-  font-size: clamp(4rem, 10vw, 523px);
-  font-weight: 900;
-  line-height: 547px;
-  text-transform: uppercase;
-  background: linear-gradient(180deg, #ffffff 0%, #cccccc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .animated-text {
@@ -302,7 +325,9 @@ section.gameplan {
   font-weight: 900;
   line-height: 0.9;
   text-transform: uppercase;
-  background: linear-gradient(180deg, #ffffff 0%, #cccccc 100%);
+
+  /* Same gradient as above */
+  background: linear-gradient(180deg, #ffffff 0%, #545454 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -431,6 +456,14 @@ section.gameplan {
 }
 
 @media (max-width: 768px) {
+.logos-grid {
+  max-width: 90%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.logos-grid img{
+  width: 100%;
+}
   .header-content {
     max-width: 90%;
     padding: 0.5rem 1rem;
@@ -458,7 +491,7 @@ section.gameplan {
   }
   .sports-section h2 {
     font-weight: 700;
-    font-size: 60px;
+    font-size: 50px;
     line-height: 80px;
   }
 
