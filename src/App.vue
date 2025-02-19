@@ -29,8 +29,8 @@
       <section
         class="gameplan"
         data-aos="zoom-in"
-        :data-aos-duration="300"
-        :data-aos-delay="150"
+        data-aos-duration="300"
+        data-aos-delay="150"
       >
         OUR GAMEPLAN
         <!-- <img src="/our-gameplan.png" alt="" /> -->
