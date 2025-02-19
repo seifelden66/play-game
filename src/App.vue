@@ -256,7 +256,7 @@ export default {
 
 .hero-section {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 20rem 1rem;
   font-family: "Glacial Indifference", sans-serif !important; /* Force override */
   font-weight: 700;
   font-size: 106.13px;
@@ -458,7 +458,7 @@ section.gameplan {
   }
   .sports-section h2 {
     font-weight: 700;
-    font-size: 80px;
+    font-size: 60px;
     line-height: 80px;
   }
 

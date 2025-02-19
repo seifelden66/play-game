@@ -116,11 +116,7 @@ onUnmounted(() => {
   }
 }
 
-@media (max-width: 480px) {
-  .sus2 {
-    transform: translateY(-100px);
-  }
-}
+
 
 .global-section {
   margin-top: 200px;

@@ -14,11 +14,13 @@
   align-items: center;
   justify-items: center;
   padding: 3rem 1rem;
+  max-width: 986px;
+  max-height: 626px;
+  margin: 0 auto;
+
 }
 .stats-section img{
-  max-width: 986px;
-  height: 626px;
-  margin: 0 auto;
+  width: 100%;
 }
 /* 2×2 grid */
 .stats-grid {
