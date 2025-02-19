@@ -8,7 +8,7 @@
       </div>
 
       <!-- Top-right box -->
-      <div class="stats-box stts1">
+      <div class="stats-box">
         <h3>€1.5M+</h3>
         <p>Under Management</p>
       </div>
@@ -20,7 +20,7 @@
       </div>
 
       <!-- Bottom-right box -->
-      <div class="stats-box stts1">
+      <div class="stats-box">
         <h3>4</h3>
         <p>Olympic Participations</p>
       </div>
@@ -34,35 +34,83 @@
 
 <style scoped>
 .stats-section {
-  /* height: 100vh; */
   display: flex;
   align-items: center;
   padding: 3rem 1rem;
 }
 
-/* ========== Base Layout ========== */
-/* 2×2 grid with fixed column widths for large screens */
+/* 2×2 grid */
 .stats-grid {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 300px 491px; /* 2 columns: 300px & 491px */
+  grid-template-columns: 300px 491px; /* Adjust widths to match your layout */
   gap: 2rem;
   justify-content: center;
 }
 
+/* Base box styles */
 .stats-box {
-  border: 2px solid #ABF149;
-  border-radius: 8px;
-  padding: 2rem;
-  color: #ABF149;
+  position: relative;
+  z-index: 0;
+  border: none;
+  border-radius: 0; /* We'll add corners selectively below */
+  background: transparent;
+  color: #fff;
   text-align: center;
+
+  /* Layout & spacing */
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* Larger, bold number */
+/* Default gradient border (blue → green) via pseudo-element */
+.stats-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 11px; /* “Border” thickness */
+  background: linear-gradient(to right, #0032ff, #00ff3c);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: -1;
+}
+
+/* ========== Make the top two boxes BLUE only ========== */
+.stats-grid > div:nth-child(1)::before,
+.stats-grid > div:nth-child(2)::before {
+  /* Override the default gradient for top boxes */
+  background: #0032ff; 
+}
+
+/* ===== Rounded Corners for “Outer” Edges ===== */
+/* Top-left box: round top-left corner */
+.stats-grid > div:nth-child(1) {
+  border-top-left-radius: 121px;
+}
+
+/* Top-right box: round top-right corner */
+.stats-grid > div:nth-child(2) {
+  border-top-righleftt-radius: 121px;
+}
+
+/* Bottom-left box: round bottom-left corner */
+.stats-grid > div:nth-child(3) {
+  border-top-right-radius: 121px;
+}
+
+/* Bottom-right box: round bottom-right corner */
+.stats-grid > div:nth-child(4) {
+  border-top-right-radius: 121px;
+}
+
+/* Headings & text inside each box */
 .stats-box h3 {
   font-size: 123px;
   margin: 0;
@@ -70,22 +118,17 @@
   font-weight: 700;
 }
 
-/* Smaller label */
 .stats-box p {
   font-size: 44px;
   margin: 0.5rem 0 0;
 }
 
 /* ========== Responsive Styles ========== */
-
-/* Tablets and small laptops (max-width: 768px) */
 @media (max-width: 768px) {
   .stats-section {
-    min-height: auto; /* let content define height on smaller screens */
     padding: 2rem 1rem;
   }
   .stats-grid {
-    /* switch to two equal columns */
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
@@ -97,18 +140,16 @@
   }
 }
 
-/* Mobile phones (max-width: 480px) */
 @media (max-width: 480px) {
   .stats-section {
     padding: 1.5rem 1rem;
   }
   .stats-grid {
-    /* one column on mobile */
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* single column on mobile */
   }
   .stats-box {
     margin: 0 auto;
-    width: 200px; /* optional, to keep boxes from stretching too wide */
+    width: 200px; /* optional, to avoid overly wide boxes */
   }
   .stats-box h3 {
     font-size: 60px;

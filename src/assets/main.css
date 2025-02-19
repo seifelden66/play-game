@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'Glacial Indifference';
   src: url('/path/to/GlacialIndifference-Regular.woff2') format('woff2'),
-       url('/path/to/GlacialIndifference-Regular.woff') format('woff');
+    url('/path/to/GlacialIndifference-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,26 @@ body {
   font-family: 'Glacial Indifference', sans-serif;
 }
 
-body {
+/* body {
   overflow-x: hidden;
   background-image: url('/gradient-bg.png');
+} */
+
+body {
+  overflow-x: hidden;
+  background-image:
+    url('/Vector.svg'),
+    url('/gradient-bg.png');
+  background-position:
+    top center,
+    /* Vector.svg positioned at the top center */
+    center center;
+  ;
+  background-size:
+    contain,
+    cover;
+  background-repeat:
+    repeat-y,
+    repeat-y;
+  /* background-attachment: fixed;  */
 }

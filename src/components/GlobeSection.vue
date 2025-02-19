@@ -8,22 +8,28 @@
       <p class="offices-subheading">With five offices spanning</p>
 
       <div class="center-stage">
-        <div class="location-text" v-html="currentLocation">
-        </div>
+        <div class="location-text" v-html="currentLocation"></div>
         <div class="globe-graphic">
           <img :src="globeSource" alt="Globe" :style="globeStyle" />
         </div>
       </div>
-      <div class="sustainability-box">
-        Sustainability <br />
-        at Our Core
+      <div class="cont">
+        <img src="/top-sust.png" alt="" />
+        <div class="sus2">
+          <img src="/sus-top2.png" alt="" />
+        </div>
       </div>
-      <p class="bottom-text">
-        <span class="top"> We empower brands and investors </span> <br />
-        to use their capital in ways that help athletes thrive and achieve their goals
-        while enriching local communities through enhanced health, sports, and lifestyle
-        initiatives.
-      </p>
+      <div class="sus-mid">
+        <img src="/sus-mid.png" alt="" />
+      </div>
+      <div class="sus-last">
+        We Empower Brands <br /> And Investors
+        <div class="inside">
+          to use their capital in ways that help athletes thrive and achieve their goals
+          while enriching local communities through enhanced health, sports, and lifestyle
+          initiatives.
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -86,6 +92,17 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+.cont {
+  margin-top: 200px;
+  /* height: 400px; */
+  width: 120%;
+  margin-left: -150px;
+  position: relative;
+}
+.cont img {
+  left: 0;
+  width: 100%;
+}
 .global-section {
   margin-top: 200px;
   display: flex;
@@ -97,7 +114,7 @@ onUnmounted(() => {
 }
 
 .global-container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
@@ -119,7 +136,13 @@ onUnmounted(() => {
   position: relative;
   height: 200px;
 }
-
+.sus2{
+  margin-top: -250px;
+  margin-bottom: 100px;
+  /* color: #F0EFEF; */
+  opacity: .5;
+  z-index: -9999;
+}
 .location-text {
   height: 60px;
   font-size: 95px;
@@ -136,6 +159,48 @@ onUnmounted(() => {
   right: -300px;
   width: 450px;
   height: auto;
+}
+
+.sus-last {
+  /* Large white box */
+  background: #fff;
+  color: #000; /* black text */
+  font-size: clamp(32px, 4vw, 56.5px);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0;
+  border-radius: 37px;
+  
+  /* Remove hard-coded width/height/positioning; make it responsive */
+  max-width: 963px; /* or any suitable max-width */
+  margin: 4rem auto; /* center horizontally with spacing above/below */
+  padding: 3rem 2rem; /* spacing inside the box */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.inside {
+  /* Smaller green box inside */
+  background: #5bb507;
+  color: #fff;
+  font-weight: 400;
+  font-size: clamp(16px, 2vw, 24px);
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-align: center;
+  
+  /* Rounded corners */
+  border-radius: 63.5px;
+  
+  /* Responsive sizing */
+  max-width: 860px; /* narrower than .sus-last so it looks inset */
+  width: 100%;
+  margin: 0 auto; /* center inside .sus-last */
+  padding: 2rem; /* space around the text */
 }
 
 .sustainability-box {
@@ -169,10 +234,9 @@ onUnmounted(() => {
 
 /* Responsive for medium screens (up to 1024px) */
 @media (min-width: 1440px) {
-    .globe-graphic img{
-        /* right: -300px; */
-
-    }
+  .globe-graphic img {
+    /* right: -300px; */
+  }
 }
 @media (max-width: 1024px) {
   .global-heading {
@@ -207,6 +271,9 @@ onUnmounted(() => {
 
 /* Responsive for small screens (up to 768px) */
 @media (max-width: 768px) {
+  .sus-mid img{
+    width: 100%;
+  }
   .global-section {
     overflow-x: hidden;
     height: auto;
@@ -226,6 +293,29 @@ onUnmounted(() => {
     font-size: 50px;
     left: 1rem;
   }
+  .sus2{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* color: #F0EFEF; */
+  opacity: .5;
+  z-index: -9999;
+}
+  .inside{
+    padding: 20px;
+    width: auto;
+  }
+  .cont {
+  margin-top: 200px;
+  /* height: 400px; */
+  margin-bottom: 200px;
+  width: 150%;
+  margin-left: -100px;
+  position: relative;
+}
+.cont img {
+  left: 0;
+  width: 100%;
+}
   .globe-graphic img {
     right: -250px;
     top: 10%;

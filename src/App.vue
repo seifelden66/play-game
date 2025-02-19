@@ -24,9 +24,16 @@
       </div>
     </header>
     <div class="hero-section">
-      <img src="/your-vision.png" alt="" />
-      <section data-aos="zoom-in" :data-aos-duration="350" :data-aos-delay="50">
-        <img src="/our-gameplan.png" alt="" />
+      <!-- <img src="/your-vision.png" alt="" /> -->
+      YOUR VISION
+      <section
+        class="gameplan"
+        data-aos="zoom-in"
+        :data-aos-duration="350"
+        :data-aos-delay="50"
+      >
+        OUR GAMEPLAN
+        <!-- <img src="/our-gameplan.png" alt="" /> -->
       </section>
     </div>
 
@@ -76,6 +83,19 @@
     </div>
     <agency-section v-if="activeTab === 'athletes'" />
     <stats-section />
+    <section class="sports-section">
+      <h2>Our Sports</h2>
+      <div class="img">
+        <img src="/sports.png" alt="" />
+      </div>
+    </section>
+    <section class="sports-section">
+      <h2>We Work With</h2>
+      <div class="img">
+        <img src="/logos.png" alt="" />
+      </div>
+    </section>
+
     <globe-section />
     <contact-section id="touch" />
     <footer class="footer-section">
@@ -230,10 +250,27 @@ export default {
   font-weight: 700;
   /* font-size: 0.9rem; */
 }
+.menu li a:hover {
+  color: #5bb507;
+}
 
 .hero-section {
   text-align: center;
   padding: 2rem 1rem;
+  font-family: "Glacial Indifference", sans-serif !important; /* Force override */
+  font-weight: 700;
+  font-size: 106.13px;
+  line-height: 155px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+section.gameplan {
+  /* font-family: Glacial Indifference; */
+  font-weight: 700;
+  font-size: 150px;
+  line-height: 143px;
+  letter-spacing: 0%;
+  text-align: center;
 }
 .hero-section img:nth-child(2) {
   width: 100%;
@@ -273,6 +310,25 @@ export default {
   display: flex;
   gap: 9rem;
 }
+.sports-section {
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: 9rem; */
+}
+.sports-section img {
+  width: 100%;
+}
+.sports-section h2 {
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 99px;
+  padding: 0;
+  margin-bottom: 30px;
+  letter-spacing: 0%;
+}
 
 .text-from-sercvices {
   text-align: center;
@@ -302,6 +358,10 @@ export default {
 }
 
 .services-bullets li {
+  position: relative; /* Required for the pseudo-element positioning */
+  z-index: 0;
+  border-radius: 8px;
+  padding: 5px 10px;
   cursor: pointer;
   font-size: 27px;
   margin-bottom: 1rem;
@@ -309,16 +369,31 @@ export default {
   font-weight: 700;
   color: rgba(124, 124, 124, 0.51);
   transition: color 0.2s;
+  background: transparent; /* Preserve the original background */
 }
 
+/* Create a pseudo-element to simulate the gradient border */
 .services-bullets li::before {
-  content: "— ";
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 2px; /* This value controls the "border" thickness */
+  background: linear-gradient(to right, #0032ff, #00ff3c);
+  /* Use masking so that only the border area is visible */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
 }
 
 .services-bullets li.active {
+  margin-left: 20px;
   color: #fff;
   font-size: 37px;
-  margin-left: 20px;
 }
 
 .services-right {
@@ -326,6 +401,7 @@ export default {
 }
 
 .services-right h2 {
+  margin-top: -0.5rem;
   font-size: 62px;
   color: #fff;
   margin-bottom: 1rem;
@@ -357,18 +433,25 @@ export default {
   .hero-section {
     padding: 8rem 1rem;
   }
-  .hero-section img{
-    width: 100%;
+  .hero-section {
+    font-size: 40px;
   }
-  .hero-text,
-  .animated-text {
-    font-size: 12vw;
+  section.gameplan {
+    line-height: 80px;
+    font-size: 60px;
   }
+  .sports-section h2 {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 80px;
+  }
+
   .services-section {
     flex-direction: column;
     gap: 2rem;
     padding: 2rem 1rem;
   }
+
   .services-bullets li {
     font-size: 22px;
     margin-bottom: 0.75rem;
