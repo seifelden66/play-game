@@ -22,8 +22,8 @@
           <div class="agency-item train">
             <h3>TRAIN</h3>
             <p>
-              Our team of physical, mental, and tactical coaches—along with top
-              nutritionists and physiotherapists—helps you perform at the highest level.
+              Our team of physical, mental, and tactical coaches along with top
+              nutritionists and physiotherapists helps you perform at the highest level.
             </p>
           </div>
           <div class="agency-item manage">

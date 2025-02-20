@@ -29,8 +29,8 @@
       <section
         class="gameplan"
         data-aos="zoom-in"
-        data-aos-duration="300"
-        data-aos-delay="150"
+        data-aos-duration="370"
+        data-aos-delay="100"
       >
         OUR GAMEPLAN
         <!-- <img src="/our-gameplan.png" alt="" /> -->
@@ -83,33 +83,7 @@
     </div>
     <agency-section v-if="activeTab === 'athletes'" />
     <stats-section />
-    <section class="sports-section">
-      <h2>Our Sports</h2>
-      <div class="img">
-        <img src="/sports.png" alt="" />
-      </div>
-    </section>
-    <section class="sports-section">
-      <h2>We Work With</h2>
-      <div class="img">
-        <!-- <div class="logos-container"> -->
-          <div class="logos-grid">
-            <img src="/butterfly.png" alt="Butterfly" />
-            <img src="/egyptair.png" alt="EgyptAir" />
-            <img src="/ahly.png" alt="Al Ahly" />
-            <img src="/deutsch.png" alt="Deutscher Tischtennis Bund" />
-            <img src="/ittihad.png" alt="Ittihad Club" />
-            <img src="/vodafone.png" alt="Vodafone" />
-            <img src="/gb.png" alt="Global Brands Group" />
-            <img src="/bdc.png" alt="Banque du Caire" />
-            <img src="/borussia.png" alt="Borussia Düsseldorf" />
-            <img src="/enppi.png" alt="Zamalek" />
-          </div>
-        <!-- </div>  -->
-
-        <!-- <img src="/logos.png" alt="" /> -->
-      </div>
-    </section>
+    <sports-section />
 
     <globe-section />
     <contact-section id="touch" />
@@ -144,7 +118,19 @@
         </div>
         <div class="footer-right">
           <div class="social-icons">
-            <img src="/icons.png" alt="" />
+            <a href=" https://www.facebook.com/share/15WJRqwyGF/?mibextid=wwXIfr" class="icon">
+              <IconsFace />
+            </a>
+            <a href="https://www.instagram.com/gameeplan?igsh=NnBlNDljZnpvNDV3" class="icon">
+              <IconsInsta />
+            </a>
+            <a href="https://www.tiktok.com/@gameeplan?_t=ZS-8tSB3EiKl2m&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaaNE64ESJ-0jPRlkuXYzCHMKtuj6IVZxkTngrx0-fVS9sn8xYXfPIXjUJM_aem_g-azUlocdmEr1vwgLqwdjQ" class="icon">
+              <IconsTiktok />
+            </a>
+            <a href="https://www.tiktok.com/@gameeplan?_t=ZS-8tSB3EiKl2m&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaaNE64ESJ-0jPRlkuXYzCHMKtuj6IVZxkTngrx0-fVS9sn8xYXfPIXjUJM_aem_g-azUlocdmEr1vwgLqwdjQ" class="icon">
+              <IconsLinked />
+            </a>
+            <!-- <img src="/icons.png" alt="" /> -->
           </div>
         </div>
       </div>
@@ -171,6 +157,11 @@ import FooterSection from "./components/FooterSection.vue";
 import AgencySection from "./components/AgencySection.vue";
 import StatsSection from "./components/StatsSection.vue";
 import GlobeSection from "./components/GlobeSection.vue";
+import SportsSection from "./components/SportsSection.vue";
+import IconsFace from "./components/Icons/Face.vue";
+import IconsInsta from "./components/Icons/Insta.vue";
+import IconsTiktok from "./components/Icons/Tiktok.vue";
+import IconsLinked from "./components/Icons/Linked.vue";
 
 export default {
   name: "LandingPage",
@@ -180,6 +171,11 @@ export default {
     AgencySection,
     StatsSection,
     GlobeSection,
+    SportsSection,
+    IconsFace,
+    IconsInsta,
+    IconsTiktok,
+    IconsLinked,
   },
   data() {
     return {
@@ -226,31 +222,6 @@ export default {
   box-sizing: border-box;
   padding-top: 20px;
 }
-
-
-.logos-grid {
-  display: grid;
-  background: #f3f3f3;
-  width: 1288px;
-  height: 422px;
-  margin: 0 auto;
-  opacity: 0.8;
-  border-radius: 37px;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 3rem;
-  justify-items: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 1rem; 
-}
-
-.logos-grid img {
-  max-width: 110px;  
-  height: auto;
-  display: block;
-}
-
 
 .header-content {
   border: 4px solid transparent;
@@ -318,32 +289,12 @@ section.gameplan {
   width: 100%;
 }
 
-
 .services-section {
   max-width: 1130px;
   margin: 0 auto;
   padding: 3rem 2rem;
   display: flex;
   gap: 9rem;
-}
-.sports-section {
-  max-width: 1130px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  display: flex;
-  flex-direction: column;
-  /* gap: 9rem; */
-}
-.sports-section img {
-  width: 100%;
-}
-.sports-section h2 {
-  font-weight: 700;
-  font-size: 120px;
-  line-height: 99px;
-  padding: 0;
-  margin-bottom: 30px;
-  letter-spacing: 0%;
 }
 
 .text-from-sercvices {
@@ -443,14 +394,14 @@ section.gameplan {
 }
 
 @media (max-width: 768px) {
-.logos-grid {
-  max-width: 90%;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-.logos-grid img{
-  width: 100%;
-}
+  .logos-grid {
+    max-width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .logos-grid img {
+    width: 100%;
+  }
   .header-content {
     max-width: 90%;
     padding: 0.5rem 1rem;
@@ -474,11 +425,6 @@ section.gameplan {
   section.gameplan {
     line-height: 80px;
     font-size: 60px;
-  }
-  .sports-section h2 {
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 80px;
   }
 
   .services-section {
@@ -635,22 +581,26 @@ section.gameplan {
 }
 
 .social-icons {
-  display: inline-flex;
-  gap: 1rem;
+  display: flex;
+  height: 150px;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
-.social-icons a img {
-  width: 24px;
-  height: 24px;
-  filter: invert(100%);
-  transition: filter 0.2s;
+.icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #ccc;
+  transition: 0.3s;
 }
-
-.social-icons a:hover img {
-  filter: brightness(0) saturate(100%) invert(49%) sepia(83%) saturate(1312%)
-    hue-rotate(66deg) brightness(99%) contrast(94%);
-}
-
 .footer-divider {
   width: 100%;
   height: 1px;
