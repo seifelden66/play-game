@@ -94,7 +94,7 @@
 }
 .sports-section h2 {
   font-weight: 700;
-  font-size: 50px;
+  font-size: clamp(20px, 5vw, 120px);
   line-height: 80px;
 }
 .logos-grid {
@@ -134,12 +134,12 @@
 .sports-section2 {
     max-width: 1130px;
     margin: 0 auto;
-    text-align: center;
+    /* text-align: center; */
     color: white;
 }
 
 .sports-section2 h2 {
-    font-size: 50px;
+    font-size: clamp(20px, 5vw, 120px);
     font-weight: bold;
     margin-bottom: 20px;
 }
