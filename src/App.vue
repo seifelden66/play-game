@@ -31,7 +31,7 @@
           class="gameplan"
           data-aos="zoom-in"
           data-aos-duration="350"
-          data-aos-delay="50"
+          data-aos-delay="130"
         >
           OUR GAMEPLAN
         </section>
@@ -197,10 +197,10 @@ export default {
   },
   mounted() {
     AOS.init({
-      duration: 300,
+      duration: 350,
       once: false,
       disable: false,
-      startEvent: "load",
+      startEvent: "scroll",
     });
     this.$nextTick(() => {
       AOS.refresh();
@@ -288,20 +288,20 @@ export default {
 
 .hero-section {
   text-align: center;
-  padding: 10rem 1rem;
+  margin: 10rem 1rem;
   font-family: "Glacial Indifference", sans-serif !important; /* Force override */
   font-weight: 700;
   font-size: 106.13px;
-  line-height: 155px;
+  /* line-height: 155px; */
 }
 
 section.gameplan {
   display: block;
-  margin-top: 55px;
+  margin-top: 100px;
   display: inline-block;
   font-weight: 700;
   font-size: clamp(100px, 10vw, 150px);
-  line-height: 143px;
+  /* line-height: 150px; */
   text-align: center;
   background: linear-gradient(180deg, #ffffff 0%, #4f5076 100%);
   -webkit-background-clip: text;
@@ -425,6 +425,7 @@ section.gameplan {
     width: 100%;
   }
   .header-content {
+    /* margin-top: 50px; */
     max-width: 90%;
     padding: 0.5rem 1rem;
     height: auto;
@@ -441,11 +442,13 @@ section.gameplan {
   }
 
   .hero-section {
-    padding: 7rem 1rem;
+    /* padding: 7rem 1rem; */
+    margin: 10rem 1rem;
     font-size: 40px;
   }
   section.gameplan {
-    line-height: 80px;
+    /* line-height: 80px; */
+    /* margin-top: 60px; */
     font-size: 60px;
   }
 
