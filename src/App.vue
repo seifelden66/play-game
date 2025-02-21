@@ -33,7 +33,6 @@
         data-aos-delay="100"
       >
         OUR GAMEPLAN
-        <!-- <img src="/our-gameplan.png" alt="" /> -->
       </section>
     </div>
 
@@ -278,7 +277,7 @@ section.gameplan {
   margin-top: 55px;
   display: inline-block;
   font-weight: 700;
-  font-size: 150px;
+  font-size: clamp(100px, 10vw, 150px);
   line-height: 143px;
   text-align: center;
   background: linear-gradient(180deg, #ffffff 0%, #4f5076 100%);

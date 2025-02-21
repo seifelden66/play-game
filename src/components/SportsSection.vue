@@ -32,7 +32,7 @@
     </div>
   </section>
   <section class="sports-section">
-    <h2>We Work With</h2>
+    <h2>Our Ecosystem</h2>
     <div class="img">
       <!-- <div class="logos-container"> -->
       <div class="logos-grid">
