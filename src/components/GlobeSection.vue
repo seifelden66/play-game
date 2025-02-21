@@ -23,9 +23,9 @@
         <img src="/sus-mid.png" alt="" />
       </div>
       <div class="sus-last">
-        <h3>
+        <p>
         We Empower Brands <br /> And Investors
-        </h3>
+        </p>
         <div class="inside">
           to use their capital in ways that help athletes thrive and achieve their goals
           while enriching local communities through enhanced health, sports, and lifestyle
@@ -173,21 +173,21 @@ onUnmounted(() => {
   transition: transform 0.8s ease-in-out;
 }
 
-.sus-last {
-  h3{
-    text-transform: uppercase;
-  }
-  background: #fff;
-  color: #000;
+.sus-last p{
+  text-transform: uppercase;
   font-size: clamp(32px, 4vw, 56.5px);
   font-weight: 700;
+}
+.sus-last {
+  background: #fff;
+  color: #000;
   text-align: center;
-  line-height: 1.2;
+  /* line-height: 1.2; */
   letter-spacing: 0;
   border-radius: 37px;
   max-width: 963px;
   margin: 4rem auto;
-  padding: 3rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
