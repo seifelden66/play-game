@@ -169,7 +169,7 @@
     /* padding: 10px; */
     justify-content: center; 
     font-weight: 700;
-    font-size: 30px;
+    font-size: clamp(15px, 2vw, 30px);
     /* line-height: 40px; */
     text-transform: uppercase;
     color: white;

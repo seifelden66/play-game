@@ -57,7 +57,7 @@ export default {
 <style scoped>
 .contact-section {
   background: url("/green-shape.png") no-repeat top left / cover,
-    linear-gradient(to bottom, #080c54, #000);
+    linear-gradient(to bottom, #100c5f, #000);
   margin-top: 90px;
   color: #000;
   min-height: 100vh;

@@ -26,14 +26,16 @@
     <div class="hero-section">
       <!-- <img src="/your-vision.png" alt="" /> -->
       YOUR VISION
-      <section
-        class="gameplan"
-        data-aos="zoom-in"
-        data-aos-duration="370"
-        data-aos-delay="100"
-      >
-        OUR GAMEPLAN
-      </section>
+      <div>
+        <section
+          class="gameplan"
+          data-aos="zoom-in"
+          data-aos-duration="370"
+          data-aos-delay="100"
+        >
+          OUR GAMEPLAN
+        </section>
+      </div>
     </div>
 
     <section class="services-section">
@@ -117,16 +119,32 @@
         </div>
         <div class="footer-right">
           <div class="social-icons">
-            <a href=" https://www.facebook.com/share/15WJRqwyGF/?mibextid=wwXIfr" class="icon">
+            <a
+              href=" https://www.facebook.com/share/15WJRqwyGF/?mibextid=wwXIfr"
+              class="icon"
+            target="_blank"
+            >
               <IconsFace />
             </a>
-            <a href="https://www.instagram.com/gameeplan?igsh=NnBlNDljZnpvNDV3" class="icon">
+            <a
+              href="https://www.instagram.com/gameeplan?igsh=NnBlNDljZnpvNDV3"
+              class="icon"
+            target="_blank"
+            >
               <IconsInsta />
             </a>
-            <a href="https://www.tiktok.com/@gameeplan?_t=ZS-8tSB3EiKl2m&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaaNE64ESJ-0jPRlkuXYzCHMKtuj6IVZxkTngrx0-fVS9sn8xYXfPIXjUJM_aem_g-azUlocdmEr1vwgLqwdjQ" class="icon">
+            <a
+              href="https://www.tiktok.com/@gameeplan?_t=ZS-8tSB3EiKl2m&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaaNE64ESJ-0jPRlkuXYzCHMKtuj6IVZxkTngrx0-fVS9sn8xYXfPIXjUJM_aem_g-azUlocdmEr1vwgLqwdjQ"
+              class="icon"
+            target="_blank"
+            >
               <IconsTiktok />
             </a>
-            <a href="https://www.tiktok.com/@gameeplan?_t=ZS-8tSB3EiKl2m&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaaNE64ESJ-0jPRlkuXYzCHMKtuj6IVZxkTngrx0-fVS9sn8xYXfPIXjUJM_aem_g-azUlocdmEr1vwgLqwdjQ" class="icon">
+            <a
+            target="_blank"
+              href="https://www.tiktok.com/@gameeplan?_t=ZS-8tSB3EiKl2m&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaaNE64ESJ-0jPRlkuXYzCHMKtuj6IVZxkTngrx0-fVS9sn8xYXfPIXjUJM_aem_g-azUlocdmEr1vwgLqwdjQ"
+              class="icon"
+            >
               <IconsLinked />
             </a>
             <!-- <img src="/icons.png" alt="" /> -->
@@ -274,6 +292,7 @@ export default {
 }
 
 section.gameplan {
+  display: block;
   margin-top: 55px;
   display: inline-block;
   font-weight: 700;
