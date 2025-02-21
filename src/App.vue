@@ -30,8 +30,8 @@
         <section
           class="gameplan"
           data-aos="zoom-in"
-          data-aos-duration="370"
-          data-aos-delay="100"
+          data-aos-duration="350"
+          data-aos-delay="50"
         >
           OUR GAMEPLAN
         </section>
@@ -92,10 +92,6 @@
       <div class="footer-top">
         <div class="footer-left">
           <div class="logo-box">
-            <!-- <div class="logo-outline">
-            <span class="logo-text">GAME<br />PLAN</span>
-          </div> -->
-            <!-- <div class="tagline">YOUR VISION,<br />OUR GAMEPLAN.</div> -->
             <img src="/logo-footer.png" alt="" />
           </div>
         </div>
@@ -122,26 +118,26 @@
             <a
               href=" https://www.facebook.com/share/15WJRqwyGF/?mibextid=wwXIfr"
               class="icon"
-            target="_blank"
+              target="_blank"
             >
               <IconsFace />
             </a>
             <a
               href="https://www.instagram.com/gameeplan?igsh=NnBlNDljZnpvNDV3"
               class="icon"
-            target="_blank"
+              target="_blank"
             >
               <IconsInsta />
             </a>
             <a
               href="https://www.tiktok.com/@gameeplan?_t=ZS-8tSB3EiKl2m&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaaNE64ESJ-0jPRlkuXYzCHMKtuj6IVZxkTngrx0-fVS9sn8xYXfPIXjUJM_aem_g-azUlocdmEr1vwgLqwdjQ"
               class="icon"
-            target="_blank"
+              target="_blank"
             >
               <IconsTiktok />
             </a>
             <a
-            target="_blank"
+              target="_blank"
               href="https://www.tiktok.com/@gameeplan?_t=ZS-8tSB3EiKl2m&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaaNE64ESJ-0jPRlkuXYzCHMKtuj6IVZxkTngrx0-fVS9sn8xYXfPIXjUJM_aem_g-azUlocdmEr1vwgLqwdjQ"
               class="icon"
             >
@@ -200,7 +196,15 @@ export default {
     };
   },
   mounted() {
-    AOS.init();
+    AOS.init({
+      duration: 300,
+      once: false,
+      disable: false,
+      startEvent: "load",
+    });
+    this.$nextTick(() => {
+      AOS.refresh();
+    });
   },
   methods: {
     scrollToServices(tab) {
