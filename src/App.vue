@@ -138,7 +138,7 @@
             </a>
             <a
               target="_blank"
-              href="https://www.tiktok.com/@gameeplan?_t=ZS-8tSB3EiKl2m&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaaNE64ESJ-0jPRlkuXYzCHMKtuj6IVZxkTngrx0-fVS9sn8xYXfPIXjUJM_aem_g-azUlocdmEr1vwgLqwdjQ"
+              href="https://www.linkedin.com/company/gameeplan/"
               class="icon"
             >
               <IconsLinked />
