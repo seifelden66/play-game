@@ -376,8 +376,8 @@ section.gameplan {
 
   /* Increase padding as desired */
   /* padding: 0.5rem; */
-  width: 283px;
-  height: 67px;
+  width: 290px;
+  height: 70px;
   /* Apply a 15px border radius to the active item */
   border-radius: 15px;
 }
