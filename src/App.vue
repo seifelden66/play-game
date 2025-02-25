@@ -23,14 +23,16 @@
         </nav>
       </div>
     </header>
+
     <div class="hero-section">
-      <!-- <img src="/your-vision.png" alt="" /> -->
+      <span >
       YOUR VISION
+      </span>
       <div>
         <section
           class="gameplan"
           data-aos="zoom-in"
-          data-aos-duration="350"
+          data-aos-duration="550"
           data-aos-delay="130"
         >
           OUR GAMEPLAN
@@ -72,20 +74,15 @@
     </section>
     <div class="text-from-sercvices">
       <span v-if="activeTab === 'brands'">
-        Our unique athlete management system continuously aligns your message with the
-        right athlete at the right time. As your brand and the world evolves, we help you
-        pivot—maximizing impact and minimizing risk.
+        Our unique athlete management system continuously aligns your message with the right athlete at the right time. As your brand and the world evolves, we help you pivot—maximizing impact and minimizing risk.
       </span>
       <span v-else-if="activeTab === 'investors'">
-        We leverage our global network and unparalleled expertise to identify and invest
-        in high-potential ventures across these thriving sectors. Our portfolio spans
-        cutting-edge technology, sports nutrition, wellness, and beyond.
+        We leverage our global network and unparalleled expertise to identify and invest in high-potential ventures across these thriving sectors. Our portfolio spans cutting-edge technology, sports nutrition, wellness, and beyond.
       </span>
     </div>
     <agency-section v-if="activeTab === 'athletes'" />
     <stats-section />
     <sports-section />
-
     <globe-section />
     <contact-section id="touch" />
     <footer class="footer-section">
@@ -116,7 +113,7 @@
         <div class="footer-right">
           <div class="social-icons">
             <a
-              href=" https://www.facebook.com/share/15WJRqwyGF/?mibextid=wwXIfr"
+              href="https://www.facebook.com/share/15WJRqwyGF/?mibextid=wwXIfr"
               class="icon"
               target="_blank"
             >
@@ -143,7 +140,6 @@
             >
               <IconsLinked />
             </a>
-            <!-- <img src="/icons.png" alt="" /> -->
           </div>
         </div>
       </div>
@@ -163,24 +159,22 @@
 </template>
 
 <script>
-import AOS from "aos";
-import "aos/dist/aos.css";
-import ContactSection from "./components/ContactSection.vue";
-import FooterSection from "./components/FooterSection.vue";
-import AgencySection from "./components/AgencySection.vue";
-import StatsSection from "./components/StatsSection.vue";
-import GlobeSection from "./components/GlobeSection.vue";
-import SportsSection from "./components/SportsSection.vue";
-import IconsFace from "./components/Icons/Face.vue";
-import IconsInsta from "./components/Icons/Insta.vue";
-import IconsTiktok from "./components/Icons/Tiktok.vue";
-import IconsLinked from "./components/Icons/Linked.vue";
+import AOS from "aos"
+import "aos/dist/aos.css"
+import ContactSection from "./components/ContactSection.vue"
+import AgencySection from "./components/AgencySection.vue"
+import StatsSection from "./components/StatsSection.vue"
+import GlobeSection from "./components/GlobeSection.vue"
+import SportsSection from "./components/SportsSection.vue"
+import IconsFace from "./components/Icons/Face.vue"
+import IconsInsta from "./components/Icons/Insta.vue"
+import IconsTiktok from "./components/Icons/Tiktok.vue"
+import IconsLinked from "./components/Icons/Linked.vue"
 
 export default {
   name: "LandingPage",
   components: {
     ContactSection,
-    FooterSection,
     AgencySection,
     StatsSection,
     GlobeSection,
@@ -193,7 +187,7 @@ export default {
   data() {
     return {
       activeTab: "brands",
-    };
+    }
   },
   mounted() {
     AOS.init({
@@ -201,24 +195,24 @@ export default {
       once: false,
       disable: false,
       startEvent: "scroll",
-    });
+    })
     this.$nextTick(() => {
-      AOS.refresh();
-    });
+      AOS.refresh()
+    })
   },
   methods: {
     scrollToServices(tab) {
-      this.activeTab = tab;
-      const servicesEl = this.$el.querySelector(".services-section");
+      this.activeTab = tab
+      const servicesEl = this.$el.querySelector(".services-section")
       if (servicesEl) {
         servicesEl.scrollIntoView({
           behavior: "smooth",
           block: "start",
-        });
+        })
       }
     },
   },
-};
+}
 </script>
 
 <style scoped>
@@ -229,21 +223,20 @@ export default {
   font-weight: 900;
   font-style: normal;
 }
-
 .landing-page {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
   color: #fff;
-  /* background: #0b1120; */
   overflow-x: hidden;
 }
-
 .top-header {
   box-sizing: border-box;
   padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
-
 .header-content {
   border: 4px solid transparent;
   border-radius: 15px;
@@ -255,18 +248,14 @@ export default {
   justify-content: space-between;
   max-width: 983px;
   height: 50px;
-  margin: 0 auto;
   padding: 1rem 2rem;
 }
-
 .logo {
   width: 200px;
-  text-transform: uppercase;
 }
 .logo img {
   width: 100%;
 }
-
 .menu ul {
   list-style: none;
   display: flex;
@@ -274,43 +263,32 @@ export default {
   margin: 0;
   padding: 0;
 }
-
 .menu li a {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
-  /* font-size: 0.9rem; */
 }
 .menu li a:hover {
   color: #5bb507;
 }
-
 .hero-section {
   text-align: center;
   margin: 10rem 1rem;
-  font-family: "Glacial Indifference", sans-serif !important; /* Force override */
+  font-family: "Glacial Indifference", sans-serif !important;
   font-weight: 700;
   font-size: 106.13px;
-  /* line-height: 155px; */
 }
-
 section.gameplan {
-  display: block;
-  margin-top: 100px;
   display: inline-block;
+  margin-top: 70px;
   font-weight: 700;
   font-size: clamp(100px, 10vw, 150px);
-  /* line-height: 150px; */
   text-align: center;
   background: linear-gradient(180deg, #ffffff 0%, #4f5076 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.hero-section img:nth-child(2) {
-  width: 100%;
-}
-
 .services-section {
   max-width: 1130px;
   margin: 0 auto;
@@ -318,10 +296,8 @@ section.gameplan {
   display: flex;
   gap: 9rem;
 }
-
 .text-from-sercvices {
   text-align: center;
-  /* text-transform: uppercase; */
   width: 100%;
   max-width: 1130px;
   margin: 0 auto;
@@ -332,11 +308,9 @@ section.gameplan {
   font-weight: 400;
   transition: color 0.2s;
 }
-
 .services-left {
   flex: 1;
 }
-
 .services-bullets {
   list-style: none;
   margin: 0;
@@ -345,9 +319,8 @@ section.gameplan {
   white-space: nowrap;
   overflow: hidden;
 }
-
 .services-bullets li {
-  position: relative; /* Required for the pseudo-element positioning */
+  position: relative;
   z-index: 0;
   border-radius: 8px;
   padding: 5px 10px;
@@ -358,106 +331,75 @@ section.gameplan {
   font-weight: 700;
   color: rgba(124, 124, 124, 0.51);
   transition: color 0.2s;
-  background: transparent; /* Preserve the original background */
+  background: transparent;
 }
-
-/* Create a pseudo-element to simulate the gradient border */
-/* Remove the general ::before from all li */
-.services-bullets li::before {
-  content: none;
-}
-
-/* Style the active item itself */
 .services-bullets li.active {
-  position: relative; /* Needed for absolutely positioned ::before */
+  position: relative;
   margin-left: 20px;
   color: #fff;
   font-size: 37px;
-
-  /* Increase padding as desired */
-  /* padding: 0.5rem; */
   width: 283px;
   height: 67px;
-  /* Apply a 15px border radius to the active item */
   border-radius: 15px;
 }
-
 .services-bullets li.active::before {
   content: "";
   position: absolute;
-  inset: 0; /* top: 0; right: 0; bottom: 0; left: 0; */
-  border-radius: inherit; /* Inherit the 15px radius from the parent */
-  padding: 2px; /* Border thickness (keep the same if you want the same thickness) */
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
   background: linear-gradient(to right, #0032ff, #00ff3c);
-
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-
   z-index: -1;
 }
-
 .services-right {
   flex: 3;
 }
-
 .services-right h2 {
   margin-top: -0.5rem;
   font-size: 62px;
   color: #fff;
   margin-bottom: 1rem;
 }
-
 .services-right p {
   font-size: 37px;
   color: #ccc;
   line-height: 1.5;
   margin: 0;
 }
-
 @media (max-width: 768px) {
-  .logos-grid {
-    max-width: 90%;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-  .logos-grid img {
-    width: 100%;
-  }
   .header-content {
-    /* margin-top: 50px; */
-    max-width: 90%;
-    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
     height: auto;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  .logo {
-    font-size: 1.2rem;
+  .menu {
+    border: 4px solid transparent;
+    border-radius: 15px;
+    background: linear-gradient(#000, #000) padding-box,
+      linear-gradient(to left, #5bb507, #1859bb) border-box;
+    background-clip: padding-box, border-box;
+    padding: 0.5rem 1rem;
+    margin-top: 10px;
   }
-  .menu ul {
-    gap: 1rem;
-  }
-  .menu li a {
-    font-size: 0.8rem;
-  }
-
   .hero-section {
-    /* padding: 7rem 1rem; */
     margin: 10rem 1rem;
     font-size: 40px;
   }
   section.gameplan {
-    /* line-height: 80px; */
-    /* margin-top: 60px; */
+    margin-top: 40px;
     font-size: 60px;
   }
-
   .services-section {
     flex-direction: column;
     gap: 2rem;
     padding: 2rem 1rem;
   }
-
   .services-bullets li {
     font-size: 22px;
     margin-bottom: 0.75rem;
@@ -475,20 +417,17 @@ section.gameplan {
   }
 }
 @media (max-width: 480px) {
-  .header-content {
-    justify-content: center;
-    align-items: center;
-    height: auto;
-  }
-  .logo {
-    margin-bottom: 1rem;
-  }
   .menu ul {
-    /* flex-direction: column; */
     gap: 0.5rem;
   }
-  .hero-text {
-    font-size: 16vw;
+  .menu li a {
+    font-size: 0.7rem;
+  }
+  .hero-section {
+    font-size: 32px;
+  }
+  section.gameplan {
+    font-size: 48px;
   }
   .services-section {
     padding: 1.5rem 1rem;
@@ -506,16 +445,16 @@ section.gameplan {
   }
   .text-from-sercvices {
     font-size: 24px;
-    padding: 1rem 0.5rem;
   }
 }
 .footer-section {
-  /* margin-top: -60px; */
-  background: black;
+  clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0% 100%);
+    background: black;
   color: #fff;
   padding: 0.5rem 1rem;
+  padding-top: 5.5rem;
+  margin-top: -10.5rem;
 }
-
 .footer-top {
   display: flex;
   flex-wrap: wrap;
@@ -524,43 +463,15 @@ section.gameplan {
   max-width: 1200px;
   margin: 0 auto 1rem;
 }
-
 .footer-left {
   flex: 1;
   min-width: 220px;
   margin-bottom: 1rem;
 }
-
 .logo-box img {
   width: 100%;
-  /* display: flex; */
-  /* justify-content: flex-start; */
-  /* align-items: flex-start; */
   position: relative;
 }
-
-.logo-outline {
-  border: 2px solid #5bb507;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-}
-
-.logo-text {
-  font-size: 3.5rem;
-  line-height: 1.2;
-  text-transform: uppercase;
-  display: block;
-  color: #fff;
-}
-
-.tagline {
-  margin-top: 0.5rem;
-  font-size: 22px;
-  text-align: center;
-  line-height: 1.4;
-}
-
 .footer-center {
   display: flex;
   flex-direction: column;
@@ -568,43 +479,35 @@ section.gameplan {
   min-width: 180px;
   margin-bottom: 1rem;
   align-items: center;
-  /* text-align: center; */
 }
-
 .footer-center h3 {
   font-size: 25px;
   margin-bottom: 1rem;
 }
-
 .footer-center ul {
   font-size: 18px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .footer-center li {
   margin: 0.5rem 0;
 }
-
 .footer-center a {
   color: #fff;
   text-decoration: none;
   font-size: 18px;
   transition: color 0.2s;
 }
-
 .footer-center a:hover {
   color: #5bb507;
 }
-
 .footer-right {
   flex: 1;
   min-width: 220px;
   margin-bottom: 1rem;
   text-align: right;
 }
-
 .social-icons {
   display: flex;
   height: 150px;
@@ -612,7 +515,6 @@ section.gameplan {
   align-items: center;
   justify-content: center;
 }
-
 .icon {
   width: 50px;
   height: 50px;
@@ -633,7 +535,6 @@ section.gameplan {
   max-width: 1200px;
   margin: 1rem auto;
 }
-
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
@@ -642,30 +543,25 @@ section.gameplan {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .footer-bottom p {
   margin: 0.5rem 0;
   font-size: 0.8rem;
   color: #ccc;
 }
-
 .footer-links {
   display: flex;
   gap: 1rem;
   margin: 0.5rem 0;
 }
-
 .footer-links a {
   color: #ccc;
   text-decoration: none;
   font-size: 0.8rem;
   transition: color 0.2s;
 }
-
 .footer-links a:hover {
   color: #5bb507;
 }
-
 .ffoter {
   background: white;
   color: #0a1271;

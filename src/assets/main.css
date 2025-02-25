@@ -27,7 +27,6 @@ body {
     url('/gradient-bg.png');
   background-position:
     top center,
-    /* Vector.svg positioned at the top center */
     center center;
   ;
   background-size:

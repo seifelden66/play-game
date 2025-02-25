@@ -19,7 +19,7 @@
       <div class="sport">
         <div class="sport-title table-tennis">Table Tennis</div>
         <!-- <div class="sport-img"> -->
-          <img src="/handball.png" alt="Table tennis paddle" />
+          <img src="/tennis.png" alt="Table tennis paddle" />
         <!-- </div> -->
       </div>
 

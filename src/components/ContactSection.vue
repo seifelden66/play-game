@@ -1,6 +1,7 @@
 <template>
   <section class="contact-section">
     <div class="contact-content">
+      <div class="bgimage"><img src="/green-shape.png" alt="" /></div>
       <div class="contact-left">
         <h2>
           Get in touch <br />
@@ -56,11 +57,22 @@ export default {
 
 <style scoped>
 .contact-section {
-  background: url("/green-shape.png") no-repeat top left / cover,
-    linear-gradient(to bottom, #100c5f, #000);
+ 
+  position: relative;
   margin-top: 90px;
   color: #000;
   min-height: 100vh;
+}
+.bgimage {
+  z-index: -5;
+  left: 0;  
+  position: absolute;
+  width: 100%;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.bgimage img{
+  width: 100%;
 }
 
 .btn {
