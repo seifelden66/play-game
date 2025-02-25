@@ -338,8 +338,12 @@ section.gameplan {
   margin-left: 20px;
   color: #fff;
   font-size: 37px;
+
+  /* Increase padding as desired */
+  /* padding: 0.5rem; */
   width: 283px;
   height: 67px;
+  /* Apply a 15px border radius to the active item */
   border-radius: 15px;
 }
 .services-bullets li.active::before {
