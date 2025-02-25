@@ -177,17 +177,43 @@ export default {
 .full-width {
   grid-column: 1 / -1;
 }
+@media(max-width:1200px){
 
+  .bgimage {
+    width: 100%;
+    top: 48%;
+    height: 150%;
+  }
+  .contact-content {
+  /* height: 100vh; */
+  padding-top: 250px;
+  
+  }
+}
+@media(max-width:992px){
+  .bgimage {
+    width: 120%;
+    top: 48%;
+    height: 135%;
+  }
+  .contact-content {
+  /* height: 100vh; */
+  padding-top: 200px;
+
+}
+}
 @media (max-width: 768px) {
   .contact-section {
     display: flex;
     align-items: center;
-    min-height: 150vh;
+    min-height: 140vh;
     margin-top: 0px;
   }
   .contact-content {
     flex-direction: column;
     gap: 2rem;
+    padding-top: 150px;
+
   }
   .contact-left {
     text-align: center;

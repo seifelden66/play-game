@@ -578,6 +578,7 @@ section.gameplan {
   text-decoration: none;
   color: inherit;
 }
+
 @media (max-width: 768px) {
   .footer-section {
     clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
