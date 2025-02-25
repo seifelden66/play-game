@@ -57,7 +57,6 @@ export default {
 
 <style scoped>
 .contact-section {
- 
   position: relative;
   margin-top: 90px;
   color: #000;
@@ -65,14 +64,24 @@ export default {
 }
 .bgimage {
   z-index: -5;
-  left: 0;  
+  left: 0;
   position: absolute;
   width: 100%;
   transform: translateY(-50%);
   top: 50%;
+  height: 100%;
 }
-.bgimage img{
+.bgimage img {
   width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .bgimage {
+    width: 120%;
+    top: 55%;
+    height: 125%;
+  }
 }
 
 .btn {

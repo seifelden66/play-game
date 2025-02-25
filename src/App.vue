@@ -580,6 +580,7 @@ section.gameplan {
 }
 @media (max-width: 768px) {
   .footer-section {
+    clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
     margin-top: -130px;
   }
   .footer-top {
