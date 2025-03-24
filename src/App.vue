@@ -158,7 +158,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted, nextTick } from 'vue'
 import AOS from "aos"
 import "aos/dist/aos.css"
 import ContactSection from "./components/ContactSection.vue"
@@ -171,50 +172,31 @@ import IconsInsta from "./components/Icons/Insta.vue"
 import IconsTiktok from "./components/Icons/Tiktok.vue"
 import IconsLinked from "./components/Icons/Linked.vue"
 
-export default {
-  name: "LandingPage",
-  components: {
-    ContactSection,
-    AgencySection,
-    StatsSection,
-    GlobeSection,
-    SportsSection,
-    IconsFace,
-    IconsInsta,
-    IconsTiktok,
-    IconsLinked,
-  },
-  data() {
-    return {
-      activeTab: "brands",
-    }
-  },
-  mounted() {
-    AOS.init({
-      duration: 350,
-      once: false,
-      disable: false,
-      startEvent: "scroll",
+const activeTab = ref('brands')
+
+onMounted(() => {
+  AOS.init({
+    duration: 350,
+    once: false,
+    disable: false,
+    startEvent: "scroll",
+  })
+  nextTick(() => {
+    AOS.refresh()
+  })
+})
+
+const scrollToServices = (tab) => {
+  activeTab.value = tab
+  const servicesEl = document.querySelector(".services-section")
+  if (servicesEl) {
+    servicesEl.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
     })
-    this.$nextTick(() => {
-      AOS.refresh()
-    })
-  },
-  methods: {
-    scrollToServices(tab) {
-      this.activeTab = tab
-      const servicesEl = this.$el.querySelector(".services-section")
-      if (servicesEl) {
-        servicesEl.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        })
-      }
-    },
-  },
+  }
 }
 </script>
-
 <style scoped>
 @font-face {
   font-family: "Heading Now Trial";
